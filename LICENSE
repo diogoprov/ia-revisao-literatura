@@ -1,0 +1,36 @@
+Copyright (c) 2026 Diogo Borges Provete
+
+SLIDES, TEMA E README
+---------------------
+Licenciados sob Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/deed.pt-br
+
+Atribuição sugerida:
+  Provete DB (2026). IA na revisão de literatura: como as ferramentas buscam,
+  onde elas falham e como reportar. https://provetelab.org/ia-revisao-literatura/
+  CC BY 4.0
+
+Isso inclui os dois diagramas esquemáticos desenhados em SVG diretamente no
+index.qmd (os dois mecanismos de erro; sensibilidade x precisao).
+
+
+FIGURAS DE TERCEIROS — MANTÊM A LICENÇA DO ORIGINAL
+---------------------------------------------------
+As figuras em assets/figs/ foram reproduzidas SEM ALTERAÇÕES a partir de
+artigos de acesso aberto e NÃO estão cobertas pela CC BY 4.0 acima. Duas delas
+são CC BY-NC 4.0, mais restritiva que a licença deste repositório: não permitem
+uso comercial.
+
+  assets/figs/jamia-fig1-workflow.png
+  assets/figs/jamia-fig6-desempenho.png
+    Figuras 1 e 6 de:
+    Scherbakov D, Hubig N, Jansari V, Bakumenko A, Lenert LA (2025).
+    The emergence of large language models as tools in literature reviews:
+    a large language model-assisted systematic review.
+    Journal of the American Medical Informatics Association 32(6):1071-1086.
+    doi:10.1093/jamia/ocaf063
+    Licença: CC BY-NC 4.0
+    https://creativecommons.org/licenses/by-nc/4.0/
+
+  assets/qr-provetelab.png
+    QR code gerado pelo autor. CC BY 4.0.

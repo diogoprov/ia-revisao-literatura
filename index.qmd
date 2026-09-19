@@ -254,9 +254,188 @@ Aqui o bloqueio *agrava* — mas o erro continua sendo de geração, não de ace
 :::
 :::
 
-## Quanto se inventa, medido {.smaller}
+## Os dois mecanismos, lado a lado {.smaller}
 
-Seifi & Seyfi (2026) submeteram 10 tópicos de neurointensivismo a **três modelos sem acesso à web** (zero-shot, recuperação desligada), pedindo 10 referências por tópico — 300 referências, conferidas às cegas por dois especialistas contra PubMed, DOI, Google Scholar e CrossRef:
+```{=html}
+<svg viewBox="0 0 1120 360" width="100%" style="max-height:430px" role="img"
+     aria-label="Diagrama comparando dois mecanismos de erro: geração paramétrica e ancoragem ruim.">
+  <defs>
+    <marker id="setaA" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#1c6e8c"/>
+    </marker>
+  </defs>
+  <!-- painel A -->
+  <rect x="8" y="8" width="530" height="344" rx="8" fill="#ffffff" stroke="#e3dccd"/>
+  <text x="28" y="42" font-family="sans-serif" font-size="21" font-weight="600" fill="#144f64">A · Geração paramétrica</text>
+  <text x="28" y="68" font-family="sans-serif" font-size="15" fill="#59616b">LLM sem busca — acontece com a internet aberta</text>
+
+  <rect x="30" y="92" width="150" height="54" rx="6" fill="#f3eee3" stroke="#e3dccd"/>
+  <text x="105" y="117" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#2d3748">pergunta</text>
+  <text x="105" y="136" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#59616b">do usuário</text>
+  <line x1="182" y1="119" x2="214" y2="119" stroke="#1c6e8c" stroke-width="2" marker-end="url(#setaA)"/>
+
+  <rect x="218" y="92" width="170" height="54" rx="6" fill="#f3eee3" stroke="#e3dccd"/>
+  <text x="303" y="117" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#2d3748">memória</text>
+  <text x="303" y="136" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#59616b">comprimida do treino</text>
+  <line x1="390" y1="119" x2="422" y2="119" stroke="#1c6e8c" stroke-width="2" marker-end="url(#setaA)"/>
+
+  <rect x="426" y="92" width="86" height="54" rx="6" fill="#fdf4f4" stroke="#a32f2f"/>
+  <text x="469" y="117" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#a32f2f">citação</text>
+  <text x="469" y="135" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#a32f2f">plausível</text>
+
+  <rect x="30" y="176" width="482" height="80" rx="6" fill="#fdf4f4" stroke="#a32f2f" stroke-dasharray="4 3"/>
+  <text x="46" y="202" font-family="sans-serif" font-size="14" font-weight="600" fill="#a32f2f">Por que o DOI é o pior caso</text>
+  <foreignObject x="46" y="210" width="450" height="44">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:sans-serif;font-size:13.5px;line-height:1.35;color:#2d3748">
+      String arbitrária de alta entropia: não há regularidade linguística a aprender.
+      O modelo acerta a <em>forma</em> (prefixo/sufixo) e erra o conteúdo.
+    </div>
+  </foreignObject>
+
+  <rect x="30" y="272" width="482" height="60" rx="6" fill="#f3eee3" stroke="#e3dccd"/>
+  <foreignObject x="44" y="280" width="456" height="48">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:sans-serif;font-size:13.5px;line-height:1.35;color:#2d3748">
+      <strong style="color:#144f64">Solução:</strong> não pedir referências ao modelo.
+      Dar a ele referências recuperadas de uma base com identificador persistente.
+    </div>
+  </foreignObject>
+
+  <!-- painel B -->
+  <rect x="582" y="8" width="530" height="344" rx="8" fill="#ffffff" stroke="#e3dccd"/>
+  <text x="602" y="42" font-family="sans-serif" font-size="21" font-weight="600" fill="#144f64">B · Ancoragem ruim</text>
+  <text x="602" y="68" font-family="sans-serif" font-size="15" fill="#59616b">Ferramenta com busca (RAG) — aqui o bloqueio agrava</text>
+
+  <rect x="604" y="92" width="118" height="54" rx="6" fill="#f3eee3" stroke="#e3dccd"/>
+  <text x="663" y="124" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#2d3748">busca</text>
+  <line x1="724" y1="119" x2="748" y2="119" stroke="#1c6e8c" stroke-width="2" marker-end="url(#setaA)"/>
+
+  <rect x="752" y="92" width="176" height="54" rx="6" fill="#fdf4f4" stroke="#a32f2f"/>
+  <text x="840" y="114" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#a32f2f">recupera pouco</text>
+  <text x="840" y="133" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#a32f2f">403 · captcha · casca vazia</text>
+  <line x1="930" y1="119" x2="950" y2="119" stroke="#1c6e8c" stroke-width="2" marker-end="url(#setaA)"/>
+
+  <rect x="954" y="92" width="142" height="54" rx="6" fill="#fdf4f4" stroke="#a32f2f"/>
+  <text x="1025" y="114" text-anchor="middle" font-family="sans-serif" font-size="13.5" fill="#a32f2f">preenche a lacuna</text>
+  <text x="1025" y="133" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#a32f2f">com plausibilidade</text>
+
+  <rect x="604" y="176" width="492" height="80" rx="6" fill="#fdf4f4" stroke="#a32f2f" stroke-dasharray="4 3"/>
+  <text x="620" y="202" font-family="sans-serif" font-size="14" font-weight="600" fill="#a32f2f">O erro continua sendo de geração</text>
+  <foreignObject x="620" y="210" width="460" height="44">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:sans-serif;font-size:13.5px;line-height:1.35;color:#2d3748">
+      O bloqueio não faz o modelo inventar: ele apenas <em>amplia a lacuna</em> que o
+      mecanismo A já preenche sozinho.
+    </div>
+  </foreignObject>
+
+  <rect x="604" y="272" width="492" height="60" rx="6" fill="#f3eee3" stroke="#e3dccd"/>
+  <foreignObject x="618" y="280" width="466" height="48">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:sans-serif;font-size:13.5px;line-height:1.35;color:#2d3748">
+      <strong style="color:#144f64">Solução:</strong> checar cada DOI contra o CrossRef,
+      e exigir da ferramenta a lista de fontes que ela de fato leu.
+    </div>
+  </foreignObject>
+</svg>
+```
+
+::: {.fonte}
+Diagrama original · CC BY 4.0. Abrir o site bloqueado resolve **B**, e não toca em **A**.
+:::
+
+
+## Demonstração ao vivo · a alucinação acontecendo [8 min]{.cronometro} {.smaller}
+
+::: {.bsl-exercicio}
+#### Protocolo — façam junto comigo
+
+1. **Alguém da sala dá o tema.** Quanto mais específico e mais nosso, melhor:
+   um gênero de anuro, uma região, um processo.
+2. Eu peço a um LLM **sem busca** (chat comum, sem "deep research", sem navegação):
+   *"Liste 5 artigos revisados por pares sobre <tema>, com autores, ano, periódico e DOI."*
+3. Projeto a resposta. Todo mundo lê. **Parece perfeita.**
+4. Rodo o verificador no R, ao vivo, contra a API do CrossRef.
+5. **Contamos no quadro:** de 5, quantos existem?
+:::
+
+::: {.bsl-destaque}
+**A aposta que eu faço agora, antes de rodar:** pelo menos um DOI vai apontar para um artigo **que existe mas não é aquele**. Esse é o caso mais perigoso — sobrevive a uma conferência apressada.
+:::
+
+## O verificador (rodando ao vivo) {.smaller}
+
+```r
+library(httr2); library(purrr); library(tibble)
+
+checa_doi <- function(doi) {
+  r <- request("https://api.crossref.org/works") |>
+    req_url_path_append(doi) |>
+    req_user_agent("workshop-ppgba (mailto:seu.email@ufms.br)") |>
+    req_error(is_error = \(resp) FALSE) |>
+    req_perform()
+
+  if (resp_status(r) != 200)
+    return(tibble(doi = doi, existe = FALSE, titulo = NA_character_))
+
+  m <- resp_body_json(r)$message
+  tibble(doi = doi, existe = TRUE, titulo = m$title[[1]])
+}
+
+dois <- c("10.1111/2041-210X.13268",   # existe
+          "10.1038/s41586-026-99999-x") # não existe
+
+map(dois, checa_doi) |> list_rbind()
+```
+
+::: {.bsl-alerta}
+**`existe = TRUE` não encerra a checagem.** Falta a pergunta que só você responde: *o título que voltou é o que a citação dizia?* Um DOI válido colado numa referência errada é o modo de falha que passa despercebido.
+:::
+
+## A escala, medida na literatura publicada {.smaller}
+
+Zhao et al. (2026) verificaram **111 milhões de referências em 2,5 milhões de artigos e preprints** do arXiv, bioRxiv, SSRN e PubMed Central:
+
+::: {.columns}
+::: {.column width="42%"}
+[146.932]{.numero}
+[referências inexistentes em trabalhos de **2025** — e os autores chamam de estimativa **conservadora**]{.numero-legenda}
+:::
+::: {.column width="58%"}
+- Aumento **abrupto** a partir da adoção ampla de LLMs.
+- Concentradas em campos de adoção rápida de IA e em textos com marcadores linguísticos de escrita assistida.
+- O SSRN — majoritariamente ciências sociais — lidera a prevalência.
+- "Preprint moderation and journal publication processes capture only a fraction of these errors."
+:::
+:::
+
+::: {.bsl-alerta}
+**É preprint, não passou por revisão por pares.** Trate como a melhor estimativa disponível, não como número fechado — e diga isso à plateia, porque é exatamente a postura que o workshop defende.
+:::
+
+::: {.fonte}
+Zhao Z, Wang Y, Stuart T, De Vaan M, Ginsparg P, Yin Y (2026). *LLM hallucinations in the wild: Large-scale evidence from non-existent citations*. arXiv:2605.07723 · Cobertura: Stokel-Walker C, *Nature* (14/05/2026) <https://www.nature.com/articles/d41586-026-01545-1> e Naddaf M, Quill E, *Nature* (01/04/2026) <https://www.nature.com/articles/d41586-026-00969-z>
+:::
+
+## Quem é mais atingido {.smaller}
+
+No mesmo levantamento, as citações inexistentes **não se distribuem ao acaso**:
+
+- aparecem mais em trabalhos de **equipes pequenas** e de **pesquisadores em início de carreira**;
+- e, quando inventadas, atribuem crédito desproporcionalmente a **pesquisadores já proeminentes** e a **homens**.
+
+::: {.bsl-destaque}
+Ou seja: quem tem menos estrutura de verificação erra mais, e o erro **reforça a hierarquia de prestígio que já existe**. A alucinação não é ruído aleatório — ela tem direção.
+:::
+
+::: {.bsl-alerta}
+Some isso ao que vamos ver adiante (Kim et al. 2025): a taxa de invenção é maior para a literatura de países de baixa renda. Duas assimetrias, no mesmo sentido.
+:::
+
+::: {.fonte}
+Zhao et al. (2026), arXiv:2605.07723 — preprint.
+:::
+
+## Quanto se inventa, em condição controlada {.smaller}
+
+O levantamento acima mede o que **sobreviveu até a publicação**. Este mede o processo na origem: Seifi & Seyfi (2026) submeteram 10 tópicos de neurointensivismo a **três modelos sem acesso à web** (zero-shot, recuperação desligada), pedindo 10 referências por tópico — 300 referências, conferidas às cegas por dois especialistas contra PubMed, DOI, Google Scholar e CrossRef:
 
 - **55,0%** (165/300) continham alguma imprecisão de citação;
 - **28,3%** (85/300) eram **completamente fabricadas**;
@@ -572,7 +751,45 @@ Cada uma acha coisas que a busca booleana tradicional não acharia. Como **compl
 :::
 :::
 
-E é exatamente isso que a literatura encontra.
+E é exatamente isso que a literatura encontra. Lahlou et al. (2026), na LSE, produziram seis revisões de literatura assistidas por IA **a partir do mesmo corpus de 280 artigos** e mediram apenas **20% de sobreposição** entre a seleção humana e a do LLM.
+
+::: {.fonte}
+Lahlou S, Gouttebroze A, Oraee A, Madera J (2026). *Writing literature reviews with AI: principles, hurdles and some lessons learned*. arXiv:2603.20235 — preprint, não revisado por pares.
+:::
+
+## Em que estágio o LLM é bom — e em qual não é {.smaller}
+
+Scherbakov et al. (2025) revisaram **172 estudos** de automação de revisão com LLM e compilaram as métricas reportadas por estágio. À esquerda, modelos tipo GPT; à direita, tipo BERT.
+
+::: {.bsl-fig .bsl-fig-peq}
+![](assets/figs/jamia-fig6-desempenho.png){fig-alt="Boxplots de acurácia, F1, precisão, recall e especificidade em três estágios — busca de publicações, triagem por título/resumo e extração de dados — para modelos GPT (A) e BERT (B). A busca tem desempenho muito inferior aos outros dois estágios."}
+:::
+
+::: {.bsl-destaque}
+Leia o primeiro grupo de cada painel. **"Searching for publications" tem F1 e recall perto do chão**, enquanto triagem e extração ficam entre 70% e 90%. Os próprios autores explicam: *"The relatively low result in searching for publications can be attributed to high hallucination rates, when these models are prompted to generate scientific citations."*
+:::
+
+::: {.credito}
+Fig. 6 de Scherbakov D, Hubig N, Jansari V, Bakumenko A, Lenert LA (2025), *J Am Med Inform Assoc* 32:1071–1086, doi:10.1093/jamia/ocaf063. Reproduzida sem alterações sob CC BY-NC 4.0.
+:::
+
+## O que essa figura resolve para você {.smaller}
+
+::: {.bsl-alerta}
+**O estágio em que o LLM é pior é exatamente aquele que os tutoriais da internet mais anunciam.** "Use IA para achar artigos" é a pior aplicação possível; "use IA para triar e extrair dados dos artigos que você achou" é a melhor.
+:::
+
+Isso reorganiza o fluxo inteiro:
+
+| Estágio | Quem faz | Por quê |
+|---|---|---|
+| Formular a pergunta e os critérios | **humano** | é a decisão científica |
+| Construir a busca | **humano + base** (booleana, `litsearchr`, OpenAlex) | precisa de sensibilidade e de ser reexecutável |
+| Ampliar com sementes | **IA** (Consensus, Undermind) | alta precisão ajuda aqui |
+| Triagem de título/resumo | **IA supervisionada** (ASReview) | 70–90% e escala |
+| Extração de dados | **IA supervisionada** | o melhor desempenho medido |
+| Síntese e interpretação | **humano** | é o artigo |
+
 
 ## A medida que resolve a discussão {.smaller}
 
@@ -603,6 +820,52 @@ A ferramenta de IA faz o contrário: entrega 20 itens dos quais 8 prestam. Ótim
 **Regra operacional:** sensibilidade de ~40% é inaceitável para uma revisão sistemática e perfeitamente aceitável para um levantamento exploratório. A ferramenta não é boa nem ruim — ela tem um perfil, e o perfil precisa casar com a tarefa.
 :::
 
+## A mesma tabela, desenhada {.smaller}
+
+```{=html}
+<svg viewBox="0 0 1120 350" width="100%" style="max-height:430px" role="img"
+     aria-label="Comparação esquemática: a busca booleana examina cerca de 1258 títulos e encontra 95 dos 100 relevantes; a busca por IA examina cerca de 96 títulos e encontra 40 dos 100 relevantes.">
+  <text x="10" y="26" font-family="sans-serif" font-size="15" fill="#59616b">Cenário ilustrativo: existem <tspan font-weight="600" fill="#2d3748">100 artigos relevantes</tspan> lá fora. Barras em escala, taxas de Lau &amp; Golder (2025).</text>
+
+  <!-- linha A -->
+  <text x="10" y="78" font-family="sans-serif" font-size="17" font-weight="600" fill="#144f64">Busca booleana</text>
+  <text x="10" y="99" font-family="sans-serif" font-size="14" fill="#59616b">sens. 94,5% · prec. 7,55%</text>
+  <rect x="230" y="62" width="860" height="46" fill="#e8e4da" stroke="#e3dccd"/>
+  <rect x="230" y="62" width="65"  height="46" fill="#1c6e8c"/>
+  <text x="1086" y="52" text-anchor="end" font-family="sans-serif" font-size="14" fill="#59616b">1.258 títulos a examinar</text>
+  <text x="303" y="91" font-family="sans-serif" font-size="14" font-weight="600" fill="#144f64">95 relevantes</text>
+
+  <!-- linha B -->
+  <text x="10" y="180" font-family="sans-serif" font-size="17" font-weight="600" fill="#144f64">Busca por IA</text>
+  <text x="10" y="201" font-family="sans-serif" font-size="14" fill="#59616b">sens. 39,5% · prec. 41,8%</text>
+  <rect x="230" y="164" width="66" height="46" fill="#e8e4da" stroke="#e3dccd"/>
+  <rect x="230" y="164" width="28" height="46" fill="#1c6e8c"/>
+  <text x="308" y="184" font-family="sans-serif" font-size="14" fill="#59616b">96 títulos a examinar</text>
+  <text x="308" y="203" font-family="sans-serif" font-size="14" font-weight="600" fill="#144f64">40 relevantes</text>
+
+  <!-- perdidos -->
+  <line x1="10" y1="238" x2="1110" y2="238" stroke="#e3dccd"/>
+  <text x="10" y="266" font-family="sans-serif" font-size="16" font-weight="600" fill="#a32f2f">O que ficou de fora — e você nunca vai saber o quê</text>
+
+  <text x="10" y="302" font-family="sans-serif" font-size="15" fill="#2d3748">booleana:</text>
+  <g fill="#a32f2f"><rect x="130" y="290" width="8" height="14"/><rect x="140" y="290" width="8" height="14"/><rect x="150" y="290" width="8" height="14"/><rect x="160" y="290" width="8" height="14"/><rect x="170" y="290" width="8" height="14"/></g>
+  <text x="200" y="302" font-family="sans-serif" font-size="14" fill="#59616b">5 de 100</text>
+
+  <text x="10" y="336" font-family="sans-serif" font-size="15" fill="#2d3748">IA:</text>
+  <g fill="#a32f2f"><rect x="130" y="324" width="8" height="14"/><rect x="140" y="324" width="8" height="14"/><rect x="150" y="324" width="8" height="14"/><rect x="160" y="324" width="8" height="14"/><rect x="170" y="324" width="8" height="14"/><rect x="180" y="324" width="8" height="14"/><rect x="190" y="324" width="8" height="14"/><rect x="200" y="324" width="8" height="14"/><rect x="210" y="324" width="8" height="14"/><rect x="220" y="324" width="8" height="14"/><rect x="230" y="324" width="8" height="14"/><rect x="240" y="324" width="8" height="14"/><rect x="250" y="324" width="8" height="14"/><rect x="260" y="324" width="8" height="14"/><rect x="270" y="324" width="8" height="14"/><rect x="280" y="324" width="8" height="14"/><rect x="290" y="324" width="8" height="14"/><rect x="300" y="324" width="8" height="14"/><rect x="310" y="324" width="8" height="14"/><rect x="320" y="324" width="8" height="14"/><rect x="330" y="324" width="8" height="14"/><rect x="340" y="324" width="8" height="14"/><rect x="350" y="324" width="8" height="14"/><rect x="360" y="324" width="8" height="14"/><rect x="370" y="324" width="8" height="14"/><rect x="380" y="324" width="8" height="14"/><rect x="390" y="324" width="8" height="14"/><rect x="400" y="324" width="8" height="14"/><rect x="410" y="324" width="8" height="14"/><rect x="420" y="324" width="8" height="14"/><rect x="430" y="324" width="8" height="14"/><rect x="440" y="324" width="8" height="14"/><rect x="450" y="324" width="8" height="14"/><rect x="460" y="324" width="8" height="14"/><rect x="470" y="324" width="8" height="14"/><rect x="480" y="324" width="8" height="14"/><rect x="490" y="324" width="8" height="14"/><rect x="500" y="324" width="8" height="14"/><rect x="510" y="324" width="8" height="14"/><rect x="520" y="324" width="8" height="14"/><rect x="530" y="324" width="8" height="14"/><rect x="540" y="324" width="8" height="14"/><rect x="550" y="324" width="8" height="14"/><rect x="560" y="324" width="8" height="14"/><rect x="570" y="324" width="8" height="14"/><rect x="580" y="324" width="8" height="14"/><rect x="590" y="324" width="8" height="14"/><rect x="600" y="324" width="8" height="14"/><rect x="610" y="324" width="8" height="14"/><rect x="620" y="324" width="8" height="14"/><rect x="630" y="324" width="8" height="14"/><rect x="640" y="324" width="8" height="14"/><rect x="650" y="324" width="8" height="14"/><rect x="660" y="324" width="8" height="14"/><rect x="670" y="324" width="8" height="14"/><rect x="680" y="324" width="8" height="14"/><rect x="690" y="324" width="8" height="14"/><rect x="700" y="324" width="8" height="14"/><rect x="710" y="324" width="8" height="14"/><rect x="720" y="324" width="8" height="14"/></g>
+  <text x="748" y="336" font-family="sans-serif" font-size="14" font-weight="600" fill="#a32f2f">60 de 100</text>
+</svg>
+```
+
+::: {.bsl-destaque}
+O apelo da barra de baixo é real: ninguém quer ler 1.258 títulos. O preço está na linha vermelha.
+:::
+
+::: {.fonte}
+Diagrama original · CC BY 4.0. Números arredondados a partir das médias de Lau &amp; Golder (2025), aplicados a um conjunto hipotético de 100 relevantes.
+:::
+
+
 ## E o problema mais sério: reprodutibilidade {.smaller}
 
 Vera et al. (2025) compararam um sistema com humano no circuito contra **Scite, Consensus e Perplexity**:
@@ -620,6 +883,34 @@ Isso tem consequência editorial direta: o **PRISMA-S** (e o **ROSES**, na nossa
 ::: {.fonte}
 Vera V, Khandelwal V, Roy K, Garimella R, Surana H, Sheth A (2025). *AI-Augmented Search for Systematic Reviews: A Comparative Analysis*. Proc Assoc Inf Sci Technol 62(1):705–717. [doi:10.1002/pra2.1290](https://doi.org/10.1002/pra2.1290)
 :::
+
+## Como fica quando se faz direito {.smaller}
+
+::: {.bsl-fig .bsl-fig-alta}
+![](assets/figs/jamia-fig1-workflow.png){fig-alt="Fluxo de trabalho com LLM integrado ao Covidence: especialista desenvolve a busca (passo 1); triagem de resumos e de texto completo e extração são feitas por LLM, cada etapa calibrada contra um consenso humano em amostras de referência."}
+:::
+
+::: {.credito}
+Fig. 1 de Scherbakov et al. (2025), *J Am Med Inform Assoc* 32:1071–1086, doi:10.1093/jamia/ocaf063. Reproduzida sem alterações sob CC BY-NC 4.0.
+:::
+
+## O detalhe que salta da figura {.smaller}
+
+::: {.bsl-destaque}
+**Passo 1 — "Expert develops the search strategy, searches the databases, and imports citations" — é humano.** Numa das revisões sistemáticas assistidas por LLM mais ambiciosas já publicadas, a busca continuou sendo feita por uma pessoa.
+:::
+
+O resto da figura é a arquitetura que torna o uso defensável:
+
+- cada etapa do LLM é **calibrada contra um consenso humano** numa amostra (30 resumos), com *benchmark* medido para os humanos **e** para o modelo;
+- o LLM vota **3 vezes** e decide por maioria (autoconsistência), porque a saída não é determinística;
+- categorias com precisão abaixo de 80% voltam para **revisão manual**;
+- e há um número reportado no fim: precisão média de **83,0%** e recall de **86,0%** na extração de dados.
+
+::: {.bsl-alerta}
+Nada disso é "pedir pro ChatGPT fazer a revisão". É engenharia de processo, com medição em cada junta — e com a etapa de busca deliberadamente fora do escopo.
+:::
+
 
 ## Exercício 2 · a mesma pergunta, agora em R [10 min]{.cronometro} {.smaller}
 
@@ -756,7 +1047,7 @@ A pergunta interessante não é "a IA vai substituir o pesquisador". É: **se ge
 :::
 
 ::: {.fonte}
-Gottweis J, Weng W-H, Natarajan V et al. (2026). *Accelerating scientific discovery with Co-Scientist*. Nature 655:487–496. [doi:10.1038/s41586-026-10644-y](https://doi.org/10.1038/s41586-026-10644-y)
+Gottweis J, Weng W-H, Natarajan V et al. (2026). *Accelerating scientific discovery with Co-Scientist*. Nature 655:487–496. [doi:10.1038/s41586-026-10644-y](https://doi.org/10.1038/s41586-026-10644-y) · Para o panorama mais amplo do efeito dos GPTs sobre o ecossistema acadêmico — recuperação de conhecimento, escrita por não nativos, triagem editorial — ver Cai Y, Deng Q, Lv T, Zhang W, Zhou Y (2025). *Impact of GPT on the Academic Ecosystem*. Science & Education. [doi:10.1007/s11191-024-00561-9](https://doi.org/10.1007/s11191-024-00561-9)
 :::
 
 ## Custo e acesso: o Sul global paga duas vezes {.smaller}
@@ -863,11 +1154,14 @@ Slides, código-fonte e todas as referências deste workshop estão no repositó
 **Desempenho e confiabilidade das ferramentas**
 
 - Culbert JH, Hobert A, Jahn N, Haupka N, Schmidt M, Donner P, Mayr P (2025). *Reference coverage analysis of OpenAlex compared to Web of Science and Scopus*. Scientometrics. doi:10.1007/s11192-025-05293-3
+- Scherbakov D, Hubig N, Jansari V, Bakumenko A, Lenert LA (2025). *The emergence of large language models as tools in literature reviews: a large language model-assisted systematic review*. J Am Med Inform Assoc 32(6):1071–1086. doi:10.1093/jamia/ocaf063
 - Kim E, Kipchumba F, Min S (2025). *Geographic Variation in LLM DOI Fabrication*. Publications 13(4):49. doi:10.3390/publications13040049
 - Lau O, Golder S (2025). *Comparison of Elicit AI and Traditional Literature Searching in Evidence Syntheses Using Four Case Studies*. Cochrane Evidence Synthesis and Methods 3(6). doi:10.1002/cesm.70050
 - Seifi A, Seyfi A (2026). *Hallucination Rate of Peer-Reviewed Citations Generated by Large Language Models in Neurocritical Care*. Crit Care Explor 8(9):e1474. doi:10.1097/CCE.0000000000001474
 - Ülkir M, Paslı B (2026). *Reference Hallucination, Citation Reliability, and Readability of Large Language Models in Anatomy-Related Question Answering*. Clin Anat. doi:10.1002/ca.70187
 - Vera V, Khandelwal V, Roy K, Garimella R, Surana H, Sheth A (2025). *AI-Augmented Search for Systematic Reviews: A Comparative Analysis*. Proc Assoc Inf Sci Technol 62(1):705–717. doi:10.1002/pra2.1290
+- Zhao Z, Wang Y, Stuart T, De Vaan M, Ginsparg P, Yin Y (2026). *LLM hallucinations in the wild: Large-scale evidence from non-existent citations*. arXiv:2605.07723 — **preprint**
+- Lahlou S, Gouttebroze A, Oraee A, Madera J (2026). *Writing literature reviews with AI: principles, hurdles and some lessons learned*. arXiv:2603.20235 — **preprint**
 
 ## Referências {.smaller}
 
@@ -880,8 +1174,16 @@ Slides, código-fonte e todas as referências deste workshop estão no repositó
 **Contexto e perspectivas**
 
 - Gottweis J, Weng W-H, Natarajan V et al. (2026). *Accelerating scientific discovery with Co-Scientist*. Nature 655:487–496. doi:10.1038/s41586-026-10644-y
+- Cai Y, Deng Q, Lv T, Zhang W, Zhou Y (2025). *Impact of GPT on the Academic Ecosystem*. Science & Education. doi:10.1007/s11191-024-00561-9
+- Naddaf M, Quill E (01/04/2026). *Hallucinated citations are polluting the scientific literature. What can be done?* Nature. <https://www.nature.com/articles/d41586-026-00969-z>
+- Stokel-Walker C (14/05/2026). *Hallucinated citations highest in social sciences preprints site*. Nature. <https://www.nature.com/articles/d41586-026-01545-1>
 - Cloudflare (01/07/2025). *Content Independence Day: no AI crawl without compensation!* <https://blog.cloudflare.com/content-independence-day-no-ai-crawl-without-compensation/>
 - Tom's Hardware (04/06/2026), sobre postagem de M. Prince (Cloudflare) de 03/06/2026.
+
+**Figuras reaproveitadas**
+
+- Fig. 1 e Fig. 6 de Scherbakov et al. (2025), *JAMIA*, doi:10.1093/jamia/ocaf063 — reproduzidas sem alterações sob **CC BY-NC 4.0**
+- Os dois diagramas esquemáticos são originais, sob CC BY 4.0
 
 ::: {.fonte}
 Estes slides: © Diogo B. Provete, sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.pt-br).
@@ -893,7 +1195,7 @@ Estes slides: © Diogo B. Provete, sob [CC BY 4.0](https://creativecommons.org/l
 Estes slides foram preparados com apoio de **Claude (Anthropic), setembro de 2026**, nas etapas de **conceitualização** (crítica e reestruturação do roteiro), **curadoria de dados** (busca e verificação das fontes, via Scholar Gateway, PubMed e busca na web) e **redação** (geração de texto a partir de prompts).
 :::
 
-As duas demonstrações do bloco 1 — a casca vazia da Cloudflare Radar e o erro 403 da Wiley — **ocorreram de fato** durante essa preparação e estão reproduzidas literalmente.
+As duas demonstrações do bloco 1 — a casca vazia da Cloudflare Radar e o erro 403 da Wiley — **ocorreram de fato** durante essa preparação e estão reproduzidas literalmente. Os dois diagramas esquemáticos (mecanismos de erro; sensibilidade × precisão) foram desenhados para esta apresentação; as duas figuras de Scherbakov et al. (2025) são reproduções sob CC BY-NC 4.0, com a licença original preservada.
 
 Todas as citações literais foram conferidas contra os documentos-fonte; todos os DOIs e URLs foram verificados em registros reais. O autor revisou e editou o conteúdo e assume integral responsabilidade por ele.
 
