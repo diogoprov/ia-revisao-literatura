@@ -23,7 +23,7 @@ Todas as citações literais foram extraídas dos documentos originais; todos os
 
 ## O deck é um superconjunto — escolha a trilha
 
-São **66 slides**. Apresentar tudo leva ~2 h 20. A tabela abaixo é a **trilha de 2 h**; os slides listados como reserva ficam no arquivo para consulta posterior (o público os lê depois, na web) e para quando o workshop for dado em 3 h.
+São **67 slides**. Apresentar tudo leva ~2 h 20. A tabela abaixo é a **trilha de 2 h**; os slides listados como reserva ficam no arquivo para consulta posterior (o público os lê depois, na web) e para quando o workshop for dado em 3 h.
 
 | Horário | Bloco | Min |
 |---|---|---|
@@ -40,7 +40,7 @@ São **66 slides**. Apresentar tudo leva ~2 h 20. A tabela abaixo é a **trilha 
 1. *"Teoria da internet morta"* — é digressão cultural, não sustenta nenhum argumento posterior
 2. *"Uma lição de medição, de graça"* (Ülkir & Paslı) — bom, mas redundante com o slide anterior
 3. *"Quem é mais atingido"* — dobra parcialmente com *"E a alucinação não é uniforme no globo"*
-4. *"O que a evidência diz sobre a cobertura"* (Culbert et al.) — vira uma frase
+4. *"E a qualidade dos metadados"* (ORCID, resumos) — vira uma frase; o diagrama de Euler do slide anterior é que carrega o argumento
 5. *"litsearchr"* — vira um link no slide final
 6. *"Como fica quando se faz direito"* + *"O detalhe que salta da figura"* — o par custa 4 min
 7. *"Modelos abertos, rodando na sua máquina"* — o assunto pede um workshop próprio
@@ -51,6 +51,7 @@ São **66 slides**. Apresentar tudo leva ~2 h 20. A tabela abaixo é a **trilha 
 - *"Demonstração ao vivo"* + *"O verificador"* — é o único momento em que eles **veem** acontecer
 - *"Em que estágio o LLM é bom — e em qual não é"* + *"O que essa figura resolve para você"* — reorganiza o fluxo de trabalho inteiro
 - *"A medida que resolve a discussão"* + *"Leia a tabela como estatístico"* + *"A mesma tabela, desenhada"* — é a evidência quantitativa que diz quando usar e quando não
+- *"Quanto cada base cobre, em escala"* — o diagrama de Euler é o argumento inteiro do bloco 2 numa figura
 
 ## Preparação antes do workshop
 
@@ -82,7 +83,7 @@ assets/figs/jamia-fig6-desempenho.png  # Scherbakov et al. 2025, Fig. 6 (CC BY-N
 .github/workflows/publish.yml    # render + deploy no GitHub Pages
 ```
 
-Os dois diagramas esquemáticos (mecanismos de erro; sensibilidade × precisão) são **SVG escrito à mão dentro do `index.qmd`**, em blocos ` ```{=html} `. Para editá-los, mexa nas coordenadas ali mesmo — não há arquivo separado.
+Os três diagramas esquemáticos (mecanismos de erro; sensibilidade × precisão; cobertura das bases) são **SVG escrito à mão dentro do `index.qmd`**, em blocos ` ```{=html} `. Para editá-los, mexa nas coordenadas ali mesmo — não há arquivo separado.
 
 ## Como renderizar e publicar
 

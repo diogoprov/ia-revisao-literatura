@@ -555,9 +555,63 @@ Para reprodutibilidade, essa é a propriedade que importa.
 <https://www.semanticscholar.org> · API: <https://api.semanticscholar.org>
 :::
 
-## O que a evidência diz sobre a cobertura {#o-que-a-evidencia-diz-sobre-a-cobertura .smaller}
+## Quanto cada base cobre, em escala {#quanto-cada-base-cobre-em-escala .smaller}
 
-Culbert et al. (2025) compararam a cobertura de referências do OpenAlex com Web of Science e Scopus num corpus compartilhado de **16,8 milhões de publicações** (2015–2022):
+```{=html}
+<svg viewBox="0 0 1120 440" width="100%" style="max-height:360px" role="img"
+     aria-label="Diagrama de Euler: as 16,8 milhões de publicações comuns às três bases representam 74,3% da Web of Science, 60,8% da Scopus e apenas 21,8% do OpenAlex no período 2015-2022.">
+  <circle cx="360" cy="230" r="190" fill="#1c6e8c" fill-opacity="0.12" stroke="#1c6e8c" stroke-width="2"/>
+  <circle cx="470" cy="180" r="103" fill="#a8710a" fill-opacity="0.16" stroke="#a8710a" stroke-width="2"/>
+  <circle cx="500" cy="280" r="114" fill="#2f6f3e" fill-opacity="0.16" stroke="#2f6f3e" stroke-width="2"/>
+
+  <text x="360" y="60"  text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="600" fill="#144f64">OpenAlex</text>
+  <text x="470" y="104" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="600" fill="#8a5c08">Web of Science</text>
+  <text x="560" y="386" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="600" fill="#2f6f3e">Scopus</text>
+
+  <text x="487" y="228" text-anchor="middle" font-family="sans-serif" font-size="19" font-weight="600" fill="#2d3748">16,8 M</text>
+  <text x="487" y="248" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#59616b">nas três</text>
+
+  <line x1="10" y1="60" x2="10" y2="60" stroke="none"/>
+
+  <!-- legenda -->
+  <rect x="700" y="56" width="410" height="330" rx="8" fill="#ffffff" stroke="#e3dccd"/>
+  <text x="722" y="86" font-family="sans-serif" font-size="15" font-weight="600" fill="#144f64">Publicações de 2015–2022</text>
+
+  <rect x="722" y="104" width="13" height="13" fill="#1c6e8c" fill-opacity="0.35" stroke="#1c6e8c"/>
+  <text x="745" y="116" font-family="sans-serif" font-size="14.5" fill="#2d3748">OpenAlex · ~77,0 M</text>
+  <text x="745" y="136" font-family="sans-serif" font-size="14.5" fill="#a32f2f" font-weight="600">só 21,8% está nas três</text>
+
+  <rect x="722" y="160" width="13" height="13" fill="#a8710a" fill-opacity="0.35" stroke="#a8710a"/>
+  <text x="745" y="172" font-family="sans-serif" font-size="14.5" fill="#2d3748">Web of Science · ~22,6 M</text>
+  <text x="745" y="192" font-family="sans-serif" font-size="14.5" fill="#59616b">74,3% está nas três</text>
+
+  <rect x="722" y="216" width="13" height="13" fill="#2f6f3e" fill-opacity="0.35" stroke="#2f6f3e"/>
+  <text x="745" y="228" font-family="sans-serif" font-size="14.5" fill="#2d3748">Scopus · ~27,6 M</text>
+  <text x="745" y="248" font-family="sans-serif" font-size="14.5" fill="#59616b">60,8% está nas três</text>
+
+  <line x1="722" y1="272" x2="1088" y2="272" stroke="#e3dccd"/>
+  <text x="722" y="296" font-family="sans-serif" font-size="14" fill="#2d3748">Corpus inteiro, todos os anos:</text>
+  <text x="722" y="318" font-family="sans-serif" font-size="14" fill="#59616b">OpenAlex 243,1 M · WoS 71,3 M · Scopus 65,6 M</text>
+  <text x="722" y="352" font-family="sans-serif" font-size="13" fill="#a32f2f">As áreas dos círculos estão em escala.</text>
+  <text x="722" y="370" font-family="sans-serif" font-size="13" fill="#a32f2f">A forma das sobreposições, não — ver abaixo.</text>
+</svg>
+```
+
+::: {.bsl-destaque}
+**Quatro em cada cinco registros do OpenAlex naquele período não estão nas outras duas bases.** Buscar só na WoS ou na Scopus é trabalhar numa fatia — e é essa fatia que define o que existe, para quem busca por ali.
+:::
+
+::: {.bsl-alerta}
+**O que é dado e o que é desenho:** as **interseções par-a-par não são reportadas** no artigo, então a geometria fora do núcleo comum é esquemática. Os totais de 2015–2022 foram derivados dos percentuais publicados.
+:::
+
+::: {.fonte}
+Culbert JH, Hobert A, Jahn N, Haupka N, Schmidt M, Donner P, Mayr P (2025). *Reference coverage analysis of OpenAlex compared to Web of Science and Scopus*. Scientometrics. [doi:10.1007/s11192-025-05293-3](https://doi.org/10.1007/s11192-025-05293-3) · números do preprint arXiv:2401.16359
+:::
+
+## E a qualidade dos metadados {#e-a-qualidade-dos-metadados .smaller}
+
+No mesmo corpus compartilhado de 16,8 milhões de publicações:
 
 - Números médios de referências e taxas de cobertura interna **comparáveis** aos das duas bases proprietárias.
 - ORCID: **92% no OpenAlex** vs. 16% na WoS e 32% na Scopus.
@@ -576,6 +630,7 @@ Culbert JH, Hobert A, Jahn N, Haupka N, Schmidt M, Donner P, Mayr P (2025). *Ref
 | Ferramenta | Sobre qual base busca | Quem controla |
 |---|---|---|
 | **Consensus** | Semantic Scholar + OpenAlex + crawl próprio (>200 M) | empresa privada |
+| **Scholar Gateway** | só o portfólio da **Wiley**: >8 M artigos de >2.000 periódicos, em texto completo | Wiley |
 | **Undermind** | busca agêntica iterativa; corpus **não declarado** na página | empresa privada |
 | **Elicit** | Semantic Scholar (~126 M na avaliação de 2025) | empresa privada |
 | **LeapSpace** | ecossistema **Elsevier** (Scopus/ScienceDirect) | Elsevier |
@@ -585,6 +640,8 @@ Culbert JH, Hobert A, Jahn N, Haupka N, Schmidt M, Donner P, Mayr P (2025). *Ref
 ::: {.bsl-alerta}
 **Se todo mundo busca no mesmo índice, a "segunda opinião" é ilusória.** Rodar Consensus e Elicit e obter listas parecidas não confirma nada: as duas estão perguntando à mesma base. Concordância entre ferramentas ≠ evidência.
 :::
+
+O Scholar Gateway é o contraexemplo útil: corpus **menor e de uma editora só**, mas em **texto completo**. Acha coisa que as outras não acham — e ignora tudo que não é Wiley. Os dois fatos vêm da mesma escolha de corpus.
 
 ## O risco de usar só isso {#o-risco-de-usar-so-isso .smaller}
 
@@ -698,14 +755,23 @@ Formule sua pergunta assim (é o formato que as ferramentas semânticas responde
 
 **O que ela devolve:** artigos + uma extração de "afirmações" (*claims*), com um medidor de quanto a literatura recuperada concorda.
 
-::: {.bsl-alerta}
-O medidor de consenso sintetiza **o que foi recuperado**, não a literatura. Se a recuperação for enviesada, o medidor mostra um consenso que não existe. Ele **não** é uma meta-análise.
+**Além da busca padrão, dois modos agênticos** — é aqui que o resultado muda de verdade:
+
+| Modo | O que ele faz a mais |
+|---|---|
+| **Pro** | quebra a pergunta em sub-buscas, aplica filtros, percorre o grafo de citações e compõe uma resposta ancorada nas fontes |
+| **Deep Search** | até **20 buscas em paralelo**, ferramentas de agente como rastreio de citações, e **50 a 100 artigos lidos** antes de responder |
+
+::: {.bsl-destaque}
+Para o exercício, rode a **busca padrão** — é ela que compara de igual para igual com o Undermind. Mas vale saber que a mesma pergunta em modo Deep devolve outra lista: **o modo é parte do método** e precisa ser declarado junto com a ferramenta.
 :::
 
-**O algoritmo de ranqueamento não é publicado** — você não consegue auditar por que um artigo ficou em primeiro lugar e outro em décimo.
+::: {.bsl-alerta}
+O medidor de consenso sintetiza **o que foi recuperado**, não a literatura — se a recuperação for enviesada, ele mostra um consenso que não existe. E o **algoritmo de ranqueamento não é publicado**: não dá para auditar por que um artigo ficou em primeiro e outro em décimo.
+:::
 
 ::: {.fonte}
-Descrição do método conforme o material público da própria Consensus.
+Descrição dos modos conforme a documentação da própria Consensus: <https://docs.consensus.app/get-started/how-search-works>
 :::
 
 ## Ferramenta B · Undermind {#ferramenta-b-undermind .smaller}
@@ -946,10 +1012,14 @@ O ponto do exercício não é que o R ache mais coisa. É que o resultado do R *
 | **Scholar Gateway** | busca semântica sobre corpus de texto completo (Wiley) | quando o argumento está no corpo do artigo, não no resumo |
 | **LeapSpace** | espaço de trabalho de IA da **Elsevier** | se sua instituição assina; herda a cobertura Scopus |
 | **Scite** | **contexto** de citação: quem cita apoiando, contestando ou só mencionando | checar se aquele clássico foi contestado depois |
-| **NotebookLM** | não busca nada — ancora num conjunto **que você subiu** | *depois* da busca: ler, resumir, cruzar os PDFs que você já selecionou |
+| **NotebookLM** | não busca nada — **conversa com o seu acervo**: você sobe os PDFs e ele responde ancorado só neles, com citação de trecho | *depois* da busca: resumir os artigos que você baixou, cruzar o que eles dizem entre si, e interrogar o conjunto |
+
+::: {.bsl-destaque}
+**O NotebookLM é a etapa seguinte, e é onde ele é muito bom.** Terminada a busca, você tem 40 PDFs baixados. Subir esse acervo e perguntar a ele — *quais destes usam delineamento experimental?*, *onde eles discordam sobre o efeito da densidade?*, *qual a faixa de tamanho amostral?* — é leitura assistida sobre um corpus **que você escolheu**, com cada resposta apontando o trecho de origem. Isso resolve o mecanismo A do bloco 1: não há o que inventar, porque a fonte está no seu disco.
+:::
 
 ::: {.bsl-alerta}
-**O NotebookLM está na lista errada em todo tutorial da internet.** Ele não é ferramenta de busca; é ferramenta de *leitura*. Usá-lo como se buscasse literatura é garantir que você só vai encontrar o que já tinha.
+**O que ele não é:** ferramenta de busca. Todo tutorial da internet o coloca nessa lista. Usá-lo para "achar literatura" garante que você só encontra o que já tinha — ele não conhece nada além do que você subiu.
 :::
 
 ## Um guia aberto, escrito por ecólogos {#um-guia-aberto-escrito-por-ecologos .smaller}
@@ -1161,7 +1231,7 @@ Slides, código-fonte e todas as referências deste workshop estão no repositó
 :::
 :::
 
-## Referências {#referencias .smaller}
+## Referências {#referencias .smaller .scrollable}
 
 **Desempenho e confiabilidade das ferramentas**
 
@@ -1175,7 +1245,7 @@ Slides, código-fonte e todas as referências deste workshop estão no repositó
 - Zhao Z, Wang Y, Stuart T, De Vaan M, Ginsparg P, Yin Y (2026). *LLM hallucinations in the wild: Large-scale evidence from non-existent citations*. arXiv:2605.07723 — **preprint**
 - Lahlou S, Gouttebroze A, Oraee A, Madera J (2026). *Writing literature reviews with AI: principles, hurdles and some lessons learned*. arXiv:2603.20235 — **preprint**
 
-## Referências {#referencias-2 .smaller}
+## Referências {#referencias-2 .smaller .scrollable}
 
 **Métodos e ferramentas**
 
@@ -1196,7 +1266,7 @@ Slides, código-fonte e todas as referências deste workshop estão no repositó
 **Figuras reaproveitadas**
 
 - Fig. 1 e Fig. 6 de Scherbakov et al. (2025), *JAMIA*, doi:10.1093/jamia/ocaf063 — reproduzidas sem alterações sob **CC BY-NC 4.0**
-- Os dois diagramas esquemáticos são originais, sob CC BY 4.0
+- Os três diagramas esquemáticos são originais, sob CC BY 4.0
 
 ::: {.fonte}
 Estes slides: © Diogo B. Provete, sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.pt-br).
@@ -1208,7 +1278,7 @@ Estes slides: © Diogo B. Provete, sob [CC BY 4.0](https://creativecommons.org/l
 Estes slides foram preparados com apoio de **Claude (Anthropic), setembro de 2026**, nas etapas de **conceitualização** (crítica e reestruturação do roteiro), **curadoria de dados** (busca e verificação das fontes, via Scholar Gateway, PubMed e busca na web) e **redação** (geração de texto a partir de prompts).
 :::
 
-As duas demonstrações do bloco 1 — a casca vazia da Cloudflare Radar e o erro 403 da Wiley — **ocorreram de fato** durante essa preparação e estão reproduzidas literalmente. Os dois diagramas esquemáticos (mecanismos de erro; sensibilidade × precisão) foram desenhados para esta apresentação; as duas figuras de Scherbakov et al. (2025) são reproduções sob CC BY-NC 4.0, com a licença original preservada.
+As duas demonstrações do bloco 1 — a casca vazia da Cloudflare Radar e o erro 403 da Wiley — **ocorreram de fato** durante essa preparação e estão reproduzidas literalmente. Os três diagramas esquemáticos (mecanismos de erro; sensibilidade × precisão; cobertura das bases) foram desenhados para esta apresentação; as duas figuras de Scherbakov et al. (2025) são reproduções sob CC BY-NC 4.0, com a licença original preservada.
 
 Todas as citações literais foram conferidas contra os documentos-fonte; todos os DOIs e URLs foram verificados em registros reais. O autor revisou e editou o conteúdo e assume integral responsabilidade por ele.
 
