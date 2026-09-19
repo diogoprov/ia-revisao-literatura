@@ -3,7 +3,7 @@ title: "IA na revisão de literatura"
 subtitle: "Como as ferramentas buscam, onde elas falham e como reportar"
 author: "Diogo B. Provete"
 institute: "Instituto de Biociências, UFMS · Biodiversity Synthesis Lab"
-date: today
+date: "2026-10-19"
 date-format: "D [de] MMMM [de] YYYY"
 lang: pt-BR
 format:
@@ -138,8 +138,10 @@ A Cloudflare publica o mesmo indicador por país, em tempo real:
 
 O que olhar na tela: a proporção bot/humano do Brasil, a série temporal, e — se der tempo — comparar com `/bots/us`.
 
+Os números mudam de semana para semana — por isso não estão fixados em nenhum slide.
+
 ::: {.fonte}
-Cloudflare Radar. Os números mudam; não vale a pena fixá-los em um slide.
+Cloudflare Radar, painel público por país.
 :::
 
 ## "Teoria da internet morta": o que ela acerta e o que ela erra {.smaller}
@@ -165,6 +167,12 @@ Cloudflare Radar. Os números mudam; não vale a pena fixá-los em um slide.
 **Use como figura de linguagem, declarando que é figura de linguagem.** O fenômeno mensurável — tráfego e conteúdo automatizados — é suficiente e não precisa de conspiração.
 :::
 
+O verbete abaixo reúne a origem, as formulações e a recepção da ideia. É **fonte terciária**: serve para documentar o que a teoria afirma e de onde ela veio — não para sustentar afirmação empírica. Os números deste bloco vêm das fontes primárias dos outros slides.
+
+::: {.fonte}
+*Dead Internet theory*: <https://en.wikipedia.org/wiki/Dead_Internet_theory>
+:::
+
 ## Por que uma página deixou de ser um documento {.smaller}
 
 ::: {.bsl-alerta}
@@ -178,9 +186,7 @@ Cloudflare Radar. Os números mudam; não vale a pena fixá-los em um slide.
 Consequência: um programa que apenas baixa a URL recebe **a casca, não o conteúdo**. Para ver o que você vê, ele precisaria executar um navegador inteiro.
 :::
 
-::: {.fonte}
-Isso é *client-side rendering*. Não é uma conspiração contra robôs — é uma escolha de arquitetura feita por outras razões (interatividade, custo de servidor). O efeito colateral é que a web ficou mais cara de ler por máquina.
-:::
+Isso se chama *client-side rendering*. Não é conspiração contra robôs: é escolha de arquitetura feita por outras razões — interatividade, custo de servidor. O efeito colateral é que a web ficou **mais cara de ler por máquina**.
 
 ## Demonstração 1 · a casca vazia {.smaller}
 
@@ -192,9 +198,7 @@ Ao preparar estes slides, tentei buscar programaticamente o número de bots do B
 A página **existe**, **abriu**, **não foi bloqueada** — e mesmo assim não tinha número nenhum. Os números chegam depois, por JSON, quando um navegador executa o JavaScript.
 :::
 
-::: {.fonte}
-Este é o modo de falha mais comum e o menos percebido: a ferramenta não erra, ela simplesmente **não vê**.
-:::
+Este é o modo de falha mais comum e o menos percebido: a ferramenta não erra — ela simplesmente **não vê**.
 
 ## Por que o robô é barrado: quatro motivos distintos {.smaller}
 
@@ -227,9 +231,7 @@ E na PubMed Central, a mesma tentativa devolveu **uma página de reCAPTCHA do Go
 O artigo é **aberto**. A licença permite. O **acesso automatizado**, não. Acesso aberto e acesso legível por máquina são coisas diferentes — e a segunda vem sendo restringida.
 :::
 
-::: {.fonte}
-Ambos os casos ocorreram durante a preparação destes slides, em setembro de 2026. O mesmo artigo foi obtido depois por uma **API** (é exatamente essa a saída do bloco 2).
-:::
+Ambos os casos ocorreram durante a preparação destes slides, em setembro de 2026. O mesmo artigo foi obtido depois por uma **API** — que é exatamente a saída do bloco 2.
 
 ## O erro de raciocínio que eu quero evitar {.smaller}
 
@@ -337,8 +339,10 @@ Aqui o bloqueio *agrava* — mas o erro continua sendo de geração, não de ace
 </svg>
 ```
 
+Abrir o site bloqueado resolve **B**, e não toca em **A**.
+
 ::: {.fonte}
-Diagrama original · CC BY 4.0. Abrir o site bloqueado resolve **B**, e não toca em **A**.
+Diagrama original · CC BY 4.0.
 :::
 
 
@@ -696,8 +700,10 @@ Formule sua pergunta assim (é o formato que as ferramentas semânticas responde
 O medidor de consenso sintetiza **o que foi recuperado**, não a literatura. Se a recuperação for enviesada, o medidor mostra um consenso que não existe. Ele **não** é uma meta-análise.
 :::
 
+**O algoritmo de ranqueamento não é publicado** — você não consegue auditar por que um artigo ficou em primeiro lugar e outro em décimo.
+
 ::: {.fonte}
-Descrição do método conforme o material público da própria Consensus. O algoritmo de ranqueamento não é publicado.
+Descrição do método conforme o material público da própria Consensus.
 :::
 
 ## Ferramenta B · Undermind {.smaller}
@@ -1177,6 +1183,7 @@ Slides, código-fonte e todas as referências deste workshop estão no repositó
 - Cai Y, Deng Q, Lv T, Zhang W, Zhou Y (2025). *Impact of GPT on the Academic Ecosystem*. Science & Education. doi:10.1007/s11191-024-00561-9
 - Naddaf M, Quill E (01/04/2026). *Hallucinated citations are polluting the scientific literature. What can be done?* Nature. <https://www.nature.com/articles/d41586-026-00969-z>
 - Stokel-Walker C (14/05/2026). *Hallucinated citations highest in social sciences preprints site*. Nature. <https://www.nature.com/articles/d41586-026-01545-1>
+- *Dead Internet theory* — verbete da Wikipédia (fonte terciária, usada só para documentar a origem e a recepção da ideia). <https://en.wikipedia.org/wiki/Dead_Internet_theory>
 - Cloudflare (01/07/2025). *Content Independence Day: no AI crawl without compensation!* <https://blog.cloudflare.com/content-independence-day-no-ai-crawl-without-compensation/>
 - Tom's Hardware (04/06/2026), sobre postagem de M. Prince (Cloudflare) de 03/06/2026.
 

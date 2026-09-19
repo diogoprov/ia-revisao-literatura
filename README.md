@@ -95,6 +95,29 @@ Não há chunks executáveis: o bloco de R nos slides é ilustrativo. O render p
 
 `docs/` está no `.gitignore` — a saída é construída pelo GitHub Actions a cada push.
 
+## Depósito no Zenodo (fazer DEPOIS de apresentar)
+
+O `.zenodo.json` na raiz já traz os metadados prontos: título, autoria com ORCID,
+afiliação, data, idioma, `upload_type: lesson`, palavras-chave em português e inglês,
+identificadores relacionados e a ressalva de licença das figuras.
+
+Passos, na ordem:
+
+1. Apresentar o workshop e incorporar o que a turma mostrar que precisa mudar.
+2. Em <https://zenodo.org>, menu do usuário → **GitHub** → ligar o repositório
+   `diogoprov/ia-revisao-literatura`.
+3. Criar o *release* no GitHub: `gh release create v1.0.0 --title "..." --notes "..."`.
+   O Zenodo arquiva e cunha o DOI automaticamente.
+4. Conferir o registro. **Um ponto a verificar:** o identificador de licença
+   `cc-by-4.0` no `.zenodo.json` não pôde ser validado contra o endpoint
+   `/api/licenses` do Zenodo (bloqueado por `robots.txt` — ironia registrada).
+   Se o depósito reclamar do campo, escolher *Creative Commons Attribution 4.0
+   International* no formulário web; o valor do arquivo é então sobrescrito.
+5. Atualizar o `version` do `.zenodo.json` a cada novo release.
+
+O Zenodo cunha **dois** DOIs: um por versão e um *concept DOI* que sempre aponta
+para a mais recente. Para citar em Lattes ou relatório, use o concept DOI.
+
 ## Licença
 
 Slides, tema, os dois diagramas SVG e este README sob **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.pt-br)**.
