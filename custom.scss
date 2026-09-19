@@ -1,0 +1,249 @@
+/*-- scss:defaults --*/
+
+// Paleta do site (provetelab.org / styles.css)
+$bsl-accent:      #1c6e8c;  // deep teal — water/biodiversity
+$bsl-accent-dark: #144f64;
+$bsl-muted:       #6c757d;
+$bsl-bg-page:     #faf7f0;  // warm off-white / paper cream
+$bsl-bg-soft:     #f3eee3;  // slightly deeper cream for callouts
+$bsl-bg-card:     #ffffff;
+$bsl-border:      #e3dccd;
+$bsl-ink:         #2d3748;
+// $bsl-muted sobre o fundo creme fica no limite de contraste; esta versão
+// escurecida é a usada em texto pequeno (fontes, créditos de figura).
+$bsl-muted-escuro: #59616b;
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+  "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif !default;
+
+$body-bg:    $bsl-bg-page;
+$body-color: $bsl-ink;
+
+$link-color:       $bsl-accent;
+$link-color-hover: $bsl-accent-dark;
+$selection-bg:     rgba(28, 110, 140, 0.25);
+
+$presentation-font-size-root:     32px;
+$presentation-line-height:        1.5;
+$presentation-heading-color:      $bsl-accent-dark;
+$presentation-heading-font-weight: 600;
+$presentation-h1-font-size:       1.9em;
+$presentation-h2-font-size:       1.35em;
+$presentation-h3-font-size:       1.1em;
+
+$code-block-bg:        $bsl-bg-soft;
+$code-block-border-color: $bsl-border;
+
+/*-- scss:rules --*/
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+// h2 com a régua do site
+.reveal .slides section > h2 {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid $bsl-border;
+  margin-bottom: 0.8rem;
+}
+
+.reveal a:hover { color: $bsl-accent-dark; text-decoration: underline; }
+
+// Slides de seção
+.reveal section.bsl-secao {
+  h1, h2 { color: $bsl-accent-dark; border: none; }
+}
+
+.reveal .slide-background.bsl-secao-bg { background-color: $bsl-bg-soft; }
+
+// Caixa "aula-meta" do site, reaproveitada como destaque
+.bsl-destaque {
+  background: $bsl-bg-soft;
+  border-left: 3px solid $bsl-accent;
+  padding: 0.55rem 0.95rem;
+  margin: 0.8rem 0 1.2rem;
+  font-size: 0.92em;
+  color: $bsl-ink;
+  border-radius: 0 4px 4px 0;
+}
+
+.bsl-destaque strong { color: $bsl-accent-dark; }
+
+// Linha de fonte / crédito
+.fonte {
+  font-size: 0.55em;
+  color: $bsl-muted-escuro;
+  line-height: 1.35;
+  margin-top: 0.7rem;
+}
+
+.fonte a { color: $bsl-muted-escuro; text-decoration: underline; }
+
+// Números-destaque do bloco de cenário
+.numero {
+  font-size: 2.1em;
+  font-weight: 600;
+  color: $bsl-accent;
+  line-height: 1.1;
+  display: block;
+}
+
+.numero-legenda {
+  font-size: 0.72em;
+  color: $bsl-muted;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+// Semáforo (política Nature Portfolio)
+.sem-verde    { color: #2f6f3e; font-weight: 600; }
+.sem-ambar    { color: #a8710a; font-weight: 600; }
+.sem-vermelho { color: #a32f2f; font-weight: 600; }
+
+// Tabelas
+.reveal table {
+  font-size: 0.72em;
+  border-collapse: collapse;
+}
+
+.reveal table th {
+  background: $bsl-bg-soft;
+  color: $bsl-accent-dark;
+  border-bottom: 2px solid $bsl-border;
+}
+
+.reveal table td,
+.reveal table th {
+  border-color: $bsl-border;
+  padding: 0.28em 0.5em;
+  vertical-align: top;
+}
+
+// Citação literal de política / norma
+// A cor precisa ser declarada: o tema padrão do revealjs usa um azul
+// acinzentado (#6b80a3) que sobre branco fica em ~3,9:1 de contraste.
+.reveal blockquote {
+  background: $bsl-bg-card;
+  color: $bsl-ink;                 // ~12,6:1 sobre branco
+  border-left: 4px solid $bsl-accent;
+  box-shadow: none;
+  font-style: normal;
+  font-size: 0.82em;
+  padding: 0.7em 1em;
+  width: 100%;
+}
+
+.reveal blockquote p,
+.reveal blockquote em,
+.reveal blockquote strong { color: inherit; }
+
+// Citação em destaque (blog, ensaio) — maior e com aspas
+.bsl-citacao {
+  font-size: 1.15em;
+  line-height: 1.35;
+  color: $bsl-accent-dark;
+  border-left: 4px solid $bsl-accent;
+  padding: 0.4em 0 0.4em 0.9em;
+  margin: 0.6rem 0 1rem;
+}
+
+.bsl-citacao-fonte {
+  font-size: 0.62em;
+  color: $bsl-muted;
+  margin-top: -0.4rem;
+}
+
+// Figuras reaproveitadas de artigos com licença permissiva
+.bsl-fig img {
+  max-height: 520px;
+  width: auto;
+  background: #ffffff;
+  border: 1px solid $bsl-border;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.bsl-fig-alta img { max-height: 600px; }
+.bsl-fig-peq img  { max-height: 190px; }
+
+.credito {
+  font-size: 0.5em;
+  color: $bsl-muted-escuro;
+  line-height: 1.3;
+  margin-top: 0.35rem;
+}
+
+.credito a { color: $bsl-muted-escuro; text-decoration: underline; }
+
+// Slide de agradecimento
+.bsl-qr img {
+  width: 260px;
+  border: 8px solid #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(45, 55, 72, 0.15);
+}
+
+.reveal .slide-number {
+  background-color: transparent;
+  color: $bsl-muted;
+}
+
+.reveal .footer {
+  color: $bsl-muted;
+  font-size: 0.5em;
+}
+
+// ---------------------------------------------------------------------------
+// Acréscimos do workshop de revisão de literatura
+// ---------------------------------------------------------------------------
+
+// Caixa de exercício prático (mão na massa)
+.bsl-exercicio {
+  background: #ffffff;
+  border: 1px solid $bsl-border;
+  border-top: 4px solid $bsl-accent;
+  padding: 0.7rem 1rem;
+  margin: 0.7rem 0 1rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.bsl-exercicio h4 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95em;
+  color: $bsl-accent-dark;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+// Caixa de alerta — correções e armadilhas
+.bsl-alerta {
+  background: #fdf4f4;
+  border-left: 3px solid #a32f2f;
+  padding: 0.55rem 0.95rem;
+  margin: 0.8rem 0 1.2rem;
+  font-size: 0.92em;
+  border-radius: 0 4px 4px 0;
+}
+
+.bsl-alerta strong { color: #a32f2f; }
+
+// Cronômetro no canto do slide de exercício
+.cronometro {
+  display: inline-block;
+  background: $bsl-accent;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.7em;
+  padding: 0.1em 0.6em;
+  border-radius: 12px;
+  vertical-align: middle;
+  margin-left: 0.4em;
+}
+
+// Bloco de código um pouco menor nos slides de R
+.reveal pre code { font-size: 0.72em; line-height: 1.35; }

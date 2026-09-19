@@ -1,0 +1,23 @@
+project:
+  type: default
+  output-dir: docs
+  render:
+    - index.qmd
+
+# Publicado como project site do GitHub Pages sob o domínio personalizado do
+# repositório diogoprov.github.io (CNAME: provetelab.org), portanto servido em:
+site-url: https://provetelab.org/ia-revisao-literatura/
+
+execute:
+  freeze: false
+
+format:
+  revealjs:
+    include-in-header:
+      - text: |
+          <link rel="canonical" href="https://provetelab.org/ia-revisao-literatura/">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://provetelab.org/ia-revisao-literatura/">
+          <meta property="og:title" content="IA na revisão de literatura">
+          <meta property="og:description" content="Como as ferramentas de busca assistida funcionam, onde elas falham e como reportar. Workshop de 2 h. Diogo B. Provete, Biodiversity Synthesis Lab (UFMS).">
+          <meta name="twitter:card" content="summary">
