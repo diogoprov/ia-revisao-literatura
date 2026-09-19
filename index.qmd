@@ -27,7 +27,7 @@ format:
     footer: "provetelab.org"
 ---
 
-## Como este workshop funciona {.smaller}
+## Como este workshop funciona {#como-este-workshop-funciona .smaller}
 
 ::: {.bsl-destaque}
 **Pergunta-guia:** uma busca assistida por IA é um **método** — que se descreve, se justifica e se reproduz — ou um **atalho**?
@@ -46,7 +46,7 @@ format:
 Slides, código e todas as referências: <https://provetelab.org/ia-revisao-literatura/>
 :::
 
-## O que você precisa ter aberto agora {.smaller}
+## O que você precisa ter aberto agora {#o-que-voce-precisa-ter-aberto-agora .smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -72,9 +72,9 @@ install.packages(c("openalexR", "litsearchr", "tidyverse"))
 Se der problema de instalação, **não pare o workshop por isso**: os blocos 1, 2, 4 e 5 não dependem de R.
 :::
 
-# 0 · De onde viemos {.bsl-secao background-color="#f3eee3"}
+# 0 · De onde viemos {#0-de-onde-viemos .bsl-secao background-color="#f3eee3"}
 
-## A palestra anterior parou em "declare" {.smaller}
+## A palestra anterior parou em "declare" {#a-palestra-anterior-parou-em-declare .smaller}
 
 Em *IA na redação científica* fechamos com cinco regras. Uma delas era:
 
@@ -92,7 +92,7 @@ Se a busca em si passou a ser feita por uma máquina, **a busca virou parte do m
 Slides da palestra anterior: <https://provetelab.org/ia-escrita-cientifica/>
 :::
 
-## Três teses que este workshop defende {.smaller}
+## Três teses que este workshop defende {#tres-teses-que-este-workshop-defende .smaller}
 
 1. **A web deixou de ser legível por programas** — e isso tem consequências técnicas concretas para qualquer ferramenta que prometa "ler a literatura".
 
@@ -104,9 +104,9 @@ Slides da palestra anterior: <https://provetelab.org/ia-escrita-cientifica/>
 Se você sair daqui com só uma coisa, que seja a terceira.
 :::
 
-# 1 · A web que os robôs leem {.bsl-secao background-color="#f3eee3"}
+# 1 · A web que os robôs leem {#1-a-web-que-os-robos-leem .bsl-secao background-color="#f3eee3"}
 
-## Em junho de 2026, os robôs passaram as pessoas {.smaller}
+## Em junho de 2026, os robôs passaram as pessoas {#em-junho-de-2026-os-robos-passaram-as-pessoas .smaller}
 
 ::: {.columns}
 ::: {.column width="45%"}
@@ -128,7 +128,7 @@ Se você sair daqui com só uma coisa, que seja a terceira.
 Tom's Hardware (04/06/2026), a partir de postagem de M. Prince: <https://www.tomshardware.com/tech-industry/artificial-intelligence/bots-have-now-passed-human-traffic-online-cloudflare-boss-laments-says-agentic-traffic-wasnt-expected-to-eclipse-real-people-until-next-year>
 :::
 
-## O Brasil não é a média mundial {.smaller}
+## O Brasil não é a média mundial {#o-brasil-nao-e-a-media-mundial .smaller}
 
 A Cloudflare publica o mesmo indicador por país, em tempo real:
 
@@ -144,7 +144,7 @@ Os números mudam de semana para semana — por isso não estão fixados em nenh
 Cloudflare Radar, painel público por país.
 :::
 
-## "Teoria da internet morta": o que ela acerta e o que ela erra {.smaller}
+## "Teoria da internet morta": o que ela acerta e o que ela erra {#teoria-da-internet-morta-o-que-ela-acerta-e-o .smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -173,7 +173,7 @@ O verbete abaixo reúne a origem, as formulações e a recepção da ideia. É *
 *Dead Internet theory*: <https://en.wikipedia.org/wiki/Dead_Internet_theory>
 :::
 
-## Por que uma página deixou de ser um documento {.smaller}
+## Por que uma página deixou de ser um documento {#por-que-uma-pagina-deixou-de-ser-um-documento .smaller}
 
 ::: {.bsl-alerta}
 **Correção de um erro comum:** não é que "o HTML5 foi substituído por JSON e CSS". HTML continua sendo o formato da página. O que mudou foi **quem monta a página**.
@@ -188,7 +188,7 @@ Consequência: um programa que apenas baixa a URL recebe **a casca, não o conte
 
 Isso se chama *client-side rendering*. Não é conspiração contra robôs: é escolha de arquitetura feita por outras razões — interatividade, custo de servidor. O efeito colateral é que a web ficou **mais cara de ler por máquina**.
 
-## Demonstração 1 · a casca vazia {.smaller}
+## Demonstração 1 · a casca vazia {#demonstracao-1-a-casca-vazia .smaller}
 
 Ao preparar estes slides, tentei buscar programaticamente o número de bots do Brasil na página da Cloudflare Radar. O que voltou:
 
@@ -200,7 +200,7 @@ A página **existe**, **abriu**, **não foi bloqueada** — e mesmo assim não t
 
 Este é o modo de falha mais comum e o menos percebido: a ferramenta não erra — ela simplesmente **não vê**.
 
-## Por que o robô é barrado: quatro motivos distintos {.smaller}
+## Por que o robô é barrado: quatro motivos distintos {#por-que-o-robo-e-barrado-quatro-motivos .smaller}
 
 | Motivo | Quem impõe | Mecanismo |
 |---|---|---|
@@ -217,7 +217,7 @@ O quarto motivo é o novo. Desde **1º de julho de 2025** a Cloudflare bloqueia 
 Cloudflare, *Content Independence Day: no AI crawl without compensation!* (01/07/2025): <https://blog.cloudflare.com/content-independence-day-no-ai-crawl-without-compensation/>
 :::
 
-## Demonstração 2 · o 403 {.smaller}
+## Demonstração 2 · o 403 {#demonstracao-2-o-403 .smaller}
 
 Tentativa de ler programaticamente um artigo de acesso aberto na Wiley Online Library:
 
@@ -233,7 +233,7 @@ O artigo é **aberto**. A licença permite. O **acesso automatizado**, não. Ace
 
 Ambos os casos ocorreram durante a preparação destes slides, em setembro de 2026. O mesmo artigo foi obtido depois por uma **API** — que é exatamente a saída do bloco 2.
 
-## O erro de raciocínio que eu quero evitar {.smaller}
+## O erro de raciocínio que eu quero evitar {#o-erro-de-raciocinio-que-eu-quero-evitar .smaller}
 
 ::: {.bsl-alerta}
 **Bloqueio de acesso *não* é a causa da invenção de referências.** São dois mecanismos independentes. Tratar um como causa do outro leva à conclusão errada de que "se o site abrisse, o modelo não inventaria".
@@ -256,7 +256,7 @@ Aqui o bloqueio *agrava* — mas o erro continua sendo de geração, não de ace
 :::
 :::
 
-## Os dois mecanismos, lado a lado {.smaller}
+## Os dois mecanismos, lado a lado {#os-dois-mecanismos-lado-a-lado .smaller}
 
 ```{=html}
 <svg viewBox="0 0 1120 360" width="100%" style="max-height:430px" role="img"
@@ -346,10 +346,12 @@ Diagrama original · CC BY 4.0.
 :::
 
 
-## Demonstração ao vivo · a alucinação acontecendo [8 min]{.cronometro} {.smaller}
+## Demonstração ao vivo · a alucinação acontecendo [8 min]{.cronometro} {#demonstracao-ao-vivo-a-alucinacao-acontecendo .smaller}
 
 ::: {.bsl-exercicio}
-#### Protocolo — façam junto comigo
+```{=html}
+<h4>Protocolo — façam junto comigo</h4>
+```
 
 1. **Alguém da sala dá o tema.** Quanto mais específico e mais nosso, melhor:
    um gênero de anuro, uma região, um processo.
@@ -364,7 +366,7 @@ Diagrama original · CC BY 4.0.
 **A aposta que eu faço agora, antes de rodar:** pelo menos um DOI vai apontar para um artigo **que existe mas não é aquele**. Esse é o caso mais perigoso — sobrevive a uma conferência apressada.
 :::
 
-## O verificador (rodando ao vivo) {.smaller}
+## O verificador (rodando ao vivo) {#o-verificador-rodando-ao-vivo .smaller}
 
 ```r
 library(httr2); library(purrr); library(tibble)
@@ -393,7 +395,7 @@ map(dois, checa_doi) |> list_rbind()
 **`existe = TRUE` não encerra a checagem.** Falta a pergunta que só você responde: *o título que voltou é o que a citação dizia?* Um DOI válido colado numa referência errada é o modo de falha que passa despercebido.
 :::
 
-## A escala, medida na literatura publicada {.smaller}
+## A escala, medida na literatura publicada {#a-escala-medida-na-literatura-publicada .smaller}
 
 Zhao et al. (2026) verificaram **111 milhões de referências em 2,5 milhões de artigos e preprints** do arXiv, bioRxiv, SSRN e PubMed Central:
 
@@ -418,7 +420,7 @@ Zhao et al. (2026) verificaram **111 milhões de referências em 2,5 milhões de
 Zhao Z, Wang Y, Stuart T, De Vaan M, Ginsparg P, Yin Y (2026). *LLM hallucinations in the wild: Large-scale evidence from non-existent citations*. arXiv:2605.07723 · Cobertura: Stokel-Walker C, *Nature* (14/05/2026) <https://www.nature.com/articles/d41586-026-01545-1> e Naddaf M, Quill E, *Nature* (01/04/2026) <https://www.nature.com/articles/d41586-026-00969-z>
 :::
 
-## Quem é mais atingido {.smaller}
+## Quem é mais atingido {#quem-e-mais-atingido .smaller}
 
 No mesmo levantamento, as citações inexistentes **não se distribuem ao acaso**:
 
@@ -437,7 +439,7 @@ Some isso ao que vamos ver adiante (Kim et al. 2025): a taxa de invenção é ma
 Zhao et al. (2026), arXiv:2605.07723 — preprint.
 :::
 
-## Quanto se inventa, em condição controlada {.smaller}
+## Quanto se inventa, em condição controlada {#quanto-se-inventa-em-condicao-controlada .smaller}
 
 O levantamento acima mede o que **sobreviveu até a publicação**. Este mede o processo na origem: Seifi & Seyfi (2026) submeteram 10 tópicos de neurointensivismo a **três modelos sem acesso à web** (zero-shot, recuperação desligada), pedindo 10 referências por tópico — 300 referências, conferidas às cegas por dois especialistas contra PubMed, DOI, Google Scholar e CrossRef:
 
@@ -454,7 +456,7 @@ Metade das referências do modelo pior **não existia**. E elas "appear complete
 Segundo o PubMed: Seifi A, Seyfi A (2026). *Hallucination Rate of Peer-Reviewed Citations Generated by Large Language Models in Neurocritical Care*. Crit Care Explor 8(9):e1474. [doi:10.1097/CCE.0000000000001474](https://doi.org/10.1097/CCE.0000000000001474)
 :::
 
-## Uma lição de medição, de graça {.smaller}
+## Uma lição de medição, de graça {#uma-licao-de-medicao-de-graca .smaller}
 
 Um segundo estudo, no mesmo ano, com desenho parecido (1.800 referências de anatomia):
 
@@ -473,7 +475,7 @@ O que os dois **concordam**: as taxas são altas em termos absolutos, e verifica
 Segundo o PubMed: Ülkir M, Paslı B (2026). *Reference Hallucination, Citation Reliability, and Readability of Large Language Models in Anatomy-Related Question Answering*. Clin Anat. [doi:10.1002/ca.70187](https://doi.org/10.1002/ca.70187)
 :::
 
-## E a alucinação não é uniforme no globo {.smaller}
+## E a alucinação não é uniforme no globo {#e-a-alucinacao-nao-e-uniforme-no-globo .smaller}
 
 Kim, Kipchumba & Min (2025) validaram **3.451 citações** geradas por quatro modelos contra a API do CrossRef, estratificando por país de origem da publicação:
 
@@ -491,7 +493,7 @@ Para nós isso é concreto: a literatura **brasileira, latino-americana e africa
 Kim E, Kipchumba F, Min S (2025). *Geographic Variation in LLM DOI Fabrication: Cross-Country Analysis of Citation Accuracy Across Four Large Language Models*. Publications 13(4):49. [doi:10.3390/publications13040049](https://doi.org/10.3390/publications13040049)
 :::
 
-## O que muda na revisão de literatura {.smaller}
+## O que muda na revisão de literatura {#o-que-muda-na-revisao-de-literatura .smaller}
 
 ::: {.bsl-destaque}
 Um LLM **sem busca** não é uma ferramenta de revisão de literatura. É um gerador de texto com formato de bibliografia.
@@ -503,9 +505,9 @@ A saída é mudar a arquitetura: **em vez de pedir referências ao modelo, dar r
 
 É disso que trata o bloco 2.
 
-# 2 · Bases legíveis por máquina {.bsl-secao background-color="#f3eee3"}
+# 2 · Bases legíveis por máquina {#2-bases-legiveis-por-maquina .bsl-secao background-color="#f3eee3"}
 
-## O que faz uma base ser "legível por máquina" {.smaller}
+## O que faz uma base ser "legível por máquina" {#o-que-faz-uma-base-ser-legivel-por-maquina .smaller}
 
 Não é ter um site bonito. São três coisas:
 
@@ -517,7 +519,7 @@ Não é ter um site bonito. São três coisas:
 Quando as três existem, o problema do bloco 1 desaparece: não há casca vazia para renderizar, não há captcha, e o DOI **vem da base** em vez de ser gerado pelo modelo.
 :::
 
-## OpenAlex {.smaller}
+## OpenAlex {#openalex .smaller}
 
 ::: {.columns}
 ::: {.column width="52%"}
@@ -539,7 +541,7 @@ Para reprodutibilidade, essa é a propriedade que importa.
 <https://openalex.org> · documentação da API: <https://docs.openalex.org>
 :::
 
-## Semantic Scholar {.smaller}
+## Semantic Scholar {#semantic-scholar .smaller}
 
 - Mantido pelo **Allen Institute for AI (Ai2)**, instituto de pesquisa sem fins lucrativos em Seattle.
 - Mais de **200 milhões** de registros; API pública com chave gratuita.
@@ -553,7 +555,7 @@ Para reprodutibilidade, essa é a propriedade que importa.
 <https://www.semanticscholar.org> · API: <https://api.semanticscholar.org>
 :::
 
-## O que a evidência diz sobre a cobertura {.smaller}
+## O que a evidência diz sobre a cobertura {#o-que-a-evidencia-diz-sobre-a-cobertura .smaller}
 
 Culbert et al. (2025) compararam a cobertura de referências do OpenAlex com Web of Science e Scopus num corpus compartilhado de **16,8 milhões de publicações** (2015–2022):
 
@@ -569,7 +571,7 @@ Os autores não fazem propaganda: recomendam **"caution when utilising OpenAlex 
 Culbert JH, Hobert A, Jahn N, Haupka N, Schmidt M, Donner P, Mayr P (2025). *Reference coverage analysis of OpenAlex compared to Web of Science and Scopus*. Scientometrics. [doi:10.1007/s11192-025-05293-3](https://doi.org/10.1007/s11192-025-05293-3)
 :::
 
-## Cada ferramenta herda o viés do seu corpus {.smaller}
+## Cada ferramenta herda o viés do seu corpus {#cada-ferramenta-herda-o-vies-do-seu-corpus .smaller}
 
 | Ferramenta | Sobre qual base busca | Quem controla |
 |---|---|---|
@@ -584,7 +586,7 @@ Culbert JH, Hobert A, Jahn N, Haupka N, Schmidt M, Donner P, Mayr P (2025). *Ref
 **Se todo mundo busca no mesmo índice, a "segunda opinião" é ilusória.** Rodar Consensus e Elicit e obter listas parecidas não confirma nada: as duas estão perguntando à mesma base. Concordância entre ferramentas ≠ evidência.
 :::
 
-## O risco de usar só isso {.smaller}
+## O risco de usar só isso {#o-risco-de-usar-so-isso .smaller}
 
 ::: {.bsl-destaque}
 Nenhuma dessas bases indexa bem: literatura cinzenta, teses brasileiras, periódicos nacionais de baixa visibilidade, publicações em português, livros e capítulos de taxonomia.
@@ -602,7 +604,7 @@ Em ecologia e evolução isso não é um detalhe: boa parte do conhecimento de h
 | Decidir *quais* são os critérios de inclusão | humano |
 | Julgar se um resultado é plausível dado o sistema de estudo | humano |
 
-## API ou MCP? A diferença em uma frase {.smaller}
+## API ou MCP? A diferença em uma frase {#api-ou-mcp-a-diferenca-em-uma-frase .smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -629,7 +631,7 @@ Um padrão aberto que expõe uma ferramenta **para o modelo chamar sozinho**, em
 Mesma base, dois níveis de controle. Para explorar: MCP. Para um método que vai para o Methods: API, com o script versionado.
 :::
 
-## openalexR: busca reprodutível em R {.smaller}
+## openalexR: busca reprodutível em R {#openalexr-busca-reprodutivel-em-r .smaller}
 
 ```r
 library(openalexR)
@@ -659,7 +661,7 @@ Este bloco **é** a seção de métodos. Ele diz a base, a consulta, a data, o f
 Aria M, Le T, Cuccurullo C, Belfiore A, Choe J (2024). *openalexR: An R-Tool for Collecting Bibliometric Data from OpenAlex*. The R Journal 15(4):167–180. <https://journal.r-project.org/articles/RJ-2023-089/> · rOpenSci: <https://docs.ropensci.org/openalexR/>
 :::
 
-## litsearchr: a busca booleana construída a partir dos dados {.smaller}
+## litsearchr: a busca booleana construída a partir dos dados {#litsearchr-a-busca-booleana-construida-a .smaller}
 
 Pacote de R publicado em **Methods in Ecology and Evolution** — feito por e para gente da nossa área.
 
@@ -673,9 +675,9 @@ A ideia: em vez de chutar os termos de busca, você parte de um conjunto-semente
 Grames EM, Stillman AN, Tingley MW, Elphick CS (2019). *An automated approach to identifying search terms for systematic reviews using keyword co-occurrence networks*. Methods Ecol Evol 10:1645–1654. [doi:10.1111/2041-210X.13268](https://doi.org/10.1111/2041-210X.13268) · <https://elizagrames.github.io/litsearchr/>
 :::
 
-# 3 · Mão na massa {.bsl-secao background-color="#f3eee3"}
+# 3 · Mão na massa {#3-mao-na-massa .bsl-secao background-color="#f3eee3"}
 
-## A regra do bloco prático {.smaller}
+## A regra do bloco prático {#a-regra-do-bloco-pratico .smaller}
 
 ::: {.bsl-destaque}
 **Todo mundo faz a mesma pergunta, nas mesmas ferramentas, e nós comparamos as listas.** O objetivo não é aprender a clicar — é ver *com os próprios olhos* que as listas não coincidem.
@@ -690,7 +692,7 @@ Formule sua pergunta assim (é o formato que as ferramentas semânticas responde
 **Não** use uma string booleana aqui. Essas ferramentas não são buscadores booleanos, e dar a elas uma sintaxe que elas não interpretam é a forma mais fácil de obter um resultado ruim e culpar a ferramenta.
 :::
 
-## Ferramenta A · Consensus {.smaller}
+## Ferramenta A · Consensus {#ferramenta-a-consensus .smaller}
 
 **Como ela busca:** abordagem híbrida — busca semântica por *embeddings* combinada com busca por palavra-chave (BM25), sobre um corpus agregado de Semantic Scholar + OpenAlex + crawl próprio, "over 200 million academic papers".
 
@@ -706,7 +708,7 @@ O medidor de consenso sintetiza **o que foi recuperado**, não a literatura. Se 
 Descrição do método conforme o material público da própria Consensus.
 :::
 
-## Ferramenta B · Undermind {.smaller}
+## Ferramenta B · Undermind {#ferramenta-b-undermind .smaller}
 
 **Como ela busca:** busca agêntica *iterativa* — faz perguntas de esclarecimento, lê e avalia centenas de artigos, segue cadeias de citação, e repete até convergir. É um desenho diferente: otimiza **sensibilidade** em vez de velocidade (uma busca leva minutos, não segundos).
 
@@ -720,10 +722,12 @@ Descrição do método conforme o material público da própria Consensus.
 <https://www.undermind.ai> — dados do material promocional da empresa, consultado em setembro de 2026.
 :::
 
-## Exercício 1 · a mesma pergunta, duas ferramentas [12 min]{.cronometro} {.smaller}
+## Exercício 1 · a mesma pergunta, duas ferramentas [12 min]{.cronometro} {#exercicio-1-a-mesma-pergunta-duas-ferramentas .smaller}
 
 ::: {.bsl-exercicio}
-#### Passo a passo
+```{=html}
+<h4>Passo a passo</h4>
+```
 
 1. Rode **a mesma pergunta** no Consensus e no Undermind.
 2. Pegue os **20 primeiros** de cada uma. Anote DOI (ou título) numa planilha, duas colunas.
@@ -736,7 +740,7 @@ Descrição do método conforme o material público da própria Consensus.
 **Anote seu $J$.** Vamos coletar os valores da turma no quadro — é a nossa pequena amostra.
 :::
 
-## O que esperamos que aconteça {.smaller}
+## O que esperamos que aconteça {#o-que-esperamos-que-aconteca .smaller}
 
 ::: {.bsl-destaque}
 A sobreposição vai ser baixa. E cada lista vai conter artigos relevantes que a outra não tem.
@@ -763,7 +767,7 @@ E é exatamente isso que a literatura encontra. Lahlou et al. (2026), na LSE, pr
 Lahlou S, Gouttebroze A, Oraee A, Madera J (2026). *Writing literature reviews with AI: principles, hurdles and some lessons learned*. arXiv:2603.20235 — preprint, não revisado por pares.
 :::
 
-## Em que estágio o LLM é bom — e em qual não é {.smaller}
+## Em que estágio o LLM é bom — e em qual não é {#em-que-estagio-o-llm-e-bom-e-em-qual-nao-e .smaller}
 
 Scherbakov et al. (2025) revisaram **172 estudos** de automação de revisão com LLM e compilaram as métricas reportadas por estágio. À esquerda, modelos tipo GPT; à direita, tipo BERT.
 
@@ -779,7 +783,7 @@ Leia o primeiro grupo de cada painel. **"Searching for publications" tem F1 e re
 Fig. 6 de Scherbakov D, Hubig N, Jansari V, Bakumenko A, Lenert LA (2025), *J Am Med Inform Assoc* 32:1071–1086, doi:10.1093/jamia/ocaf063. Reproduzida sem alterações sob CC BY-NC 4.0.
 :::
 
-## O que essa figura resolve para você {.smaller}
+## O que essa figura resolve para você {#o-que-essa-figura-resolve-para-voce .smaller}
 
 ::: {.bsl-alerta}
 **O estágio em que o LLM é pior é exatamente aquele que os tutoriais da internet mais anunciam.** "Use IA para achar artigos" é a pior aplicação possível; "use IA para triar e extrair dados dos artigos que você achou" é a melhor.
@@ -797,7 +801,7 @@ Isso reorganiza o fluxo inteiro:
 | Síntese e interpretação | **humano** | é o artigo |
 
 
-## A medida que resolve a discussão {.smaller}
+## A medida que resolve a discussão {#a-medida-que-resolve-a-discussao .smaller}
 
 Lau & Golder (2025) compararam o Elicit Pro (modo *Review*) com as buscas tradicionais de **quatro sínteses de evidência** já publicadas — duas delas revisões Cochrane:
 
@@ -812,7 +816,7 @@ Lau & Golder (2025) compararam o Elicit Pro (modo *Review*) com as buscas tradic
 Lau O, Golder S (2025). *Comparison of Elicit AI and Traditional Literature Searching in Evidence Syntheses Using Four Case Studies*. Cochrane Evidence Synthesis and Methods 3(6). [doi:10.1002/cesm.70050](https://doi.org/10.1002/cesm.70050) — CC BY, acesso aberto
 :::
 
-## Leia a tabela como estatístico, não como usuário {.smaller}
+## Leia a tabela como estatístico, não como usuário {#leia-a-tabela-como-estatistico-nao-como .smaller}
 
 ::: {.bsl-destaque}
 As ferramentas de IA **invertem o compromisso** clássico da busca sistemática: trocam sensibilidade por precisão.
@@ -826,7 +830,7 @@ A ferramenta de IA faz o contrário: entrega 20 itens dos quais 8 prestam. Ótim
 **Regra operacional:** sensibilidade de ~40% é inaceitável para uma revisão sistemática e perfeitamente aceitável para um levantamento exploratório. A ferramenta não é boa nem ruim — ela tem um perfil, e o perfil precisa casar com a tarefa.
 :::
 
-## A mesma tabela, desenhada {.smaller}
+## A mesma tabela, desenhada {#a-mesma-tabela-desenhada .smaller}
 
 ```{=html}
 <svg viewBox="0 0 1120 350" width="100%" style="max-height:430px" role="img"
@@ -872,7 +876,7 @@ Diagrama original · CC BY 4.0. Números arredondados a partir das médias de La
 :::
 
 
-## E o problema mais sério: reprodutibilidade {.smaller}
+## E o problema mais sério: reprodutibilidade {#e-o-problema-mais-serio-reprodutibilidade .smaller}
 
 Vera et al. (2025) compararam um sistema com humano no circuito contra **Scite, Consensus e Perplexity**:
 
@@ -890,7 +894,7 @@ Isso tem consequência editorial direta: o **PRISMA-S** (e o **ROSES**, na nossa
 Vera V, Khandelwal V, Roy K, Garimella R, Surana H, Sheth A (2025). *AI-Augmented Search for Systematic Reviews: A Comparative Analysis*. Proc Assoc Inf Sci Technol 62(1):705–717. [doi:10.1002/pra2.1290](https://doi.org/10.1002/pra2.1290)
 :::
 
-## Como fica quando se faz direito {.smaller}
+## Como fica quando se faz direito {#como-fica-quando-se-faz-direito .smaller}
 
 ::: {.bsl-fig .bsl-fig-alta}
 ![](assets/figs/jamia-fig1-workflow.png){fig-alt="Fluxo de trabalho com LLM integrado ao Covidence: especialista desenvolve a busca (passo 1); triagem de resumos e de texto completo e extração são feitas por LLM, cada etapa calibrada contra um consenso humano em amostras de referência."}
@@ -900,7 +904,7 @@ Vera V, Khandelwal V, Roy K, Garimella R, Surana H, Sheth A (2025). *AI-Augmente
 Fig. 1 de Scherbakov et al. (2025), *J Am Med Inform Assoc* 32:1071–1086, doi:10.1093/jamia/ocaf063. Reproduzida sem alterações sob CC BY-NC 4.0.
 :::
 
-## O detalhe que salta da figura {.smaller}
+## O detalhe que salta da figura {#o-detalhe-que-salta-da-figura .smaller}
 
 ::: {.bsl-destaque}
 **Passo 1 — "Expert develops the search strategy, searches the databases, and imports citations" — é humano.** Numa das revisões sistemáticas assistidas por LLM mais ambiciosas já publicadas, a busca continuou sendo feita por uma pessoa.
@@ -918,10 +922,12 @@ Nada disso é "pedir pro ChatGPT fazer a revisão". É engenharia de processo, c
 :::
 
 
-## Exercício 2 · a mesma pergunta, agora em R [10 min]{.cronometro} {.smaller}
+## Exercício 2 · a mesma pergunta, agora em R [10 min]{.cronometro} {#exercicio-2-a-mesma-pergunta-agora-em-r-10 .smaller}
 
 ::: {.bsl-exercicio}
-#### Passo a passo
+```{=html}
+<h4>Passo a passo</h4>
+```
 
 1. Traduza sua pergunta numa consulta do `openalexR` (use o bloco de código do slide anterior como molde).
 2. Rode e conte quantos registros vieram.
@@ -933,7 +939,7 @@ Nada disso é "pedir pro ChatGPT fazer a revisão". É engenharia de processo, c
 O ponto do exercício não é que o R ache mais coisa. É que o resultado do R **é reexecutável** — e os outros dois não são.
 :::
 
-## As outras ferramentas, e onde cada uma entra {.smaller}
+## As outras ferramentas, e onde cada uma entra {#as-outras-ferramentas-e-onde-cada-uma-entra .smaller}
 
 | Ferramenta | O que é, de verdade | Quando usar |
 |---|---|---|
@@ -946,7 +952,7 @@ O ponto do exercício não é que o R ache mais coisa. É que o resultado do R *
 **O NotebookLM está na lista errada em todo tutorial da internet.** Ele não é ferramenta de busca; é ferramenta de *leitura*. Usá-lo como se buscasse literatura é garantir que você só vai encontrar o que já tinha.
 :::
 
-## Um guia aberto, escrito por ecólogos {.smaller}
+## Um guia aberto, escrito por ecólogos {#um-guia-aberto-escrito-por-ecologos .smaller}
 
 Matthew Grainger e Frode Thomassen Singsaas, do **NINA** (Norsk institutt for naturforskning), mantêm um guia vivo sobre IA em busca e triagem para sínteses de evidência **em ecologia e meio ambiente**.
 
@@ -964,9 +970,9 @@ Ferramentas que ele indica: **ASReview** (triagem por aprendizado ativo, aberta)
 Grainger M, Singsaas FT. *Guide to Using AI in Literature Searching and Screening for Evidence Syntheses*, v0.2 (documento vivo), NINA. <https://ninanor.github.io/AI_review_guide/>
 :::
 
-# 4 · Demonstração · agente + MCP {.bsl-secao background-color="#f3eee3"}
+# 4 · Demonstração · agente + MCP {#4-demonstracao-agente-mcp .bsl-secao background-color="#f3eee3"}
 
-## O que você vai ver (e o que não vai poder repetir hoje) {.smaller}
+## O que você vai ver (e o que não vai poder repetir hoje) {#o-que-voce-vai-ver-e-o-que-nao-vai-poder .smaller}
 
 ::: {.bsl-alerta}
 **Aviso honesto:** esta parte usa ferramenta paga. É **demonstração**, não exercício. Mostro porque é para onde o fluxo está indo — e porque o **protocolo** por baixo é aberto, ainda que o cliente não seja.
@@ -978,7 +984,7 @@ O que é um **MCP**: um padrão aberto que expõe uma ferramenta externa — uma
 Na prática: em vez de eu buscar no Consensus, copiar os resultados e colar no chat, o modelo **chama o Consensus** e recebe os metadados estruturados — com DOI de verdade, vindo da base.
 :::
 
-## O prompt {.smaller}
+## O prompt {#o-prompt .smaller}
 
 ```
 Preciso de um levantamento exploratório sobre plasticidade fenotípica
@@ -998,7 +1004,7 @@ induzida por predador em girinos de anuros neotropicais.
 Os itens **4, 5 e 6** são o que separa isto de "pedir referências pro ChatGPT". Sem eles, você voltou ao mecanismo A do bloco 1.
 :::
 
-## O que observar durante a demonstração {.smaller}
+## O que observar durante a demonstração {#o-que-observar-durante-a-demonstracao .smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -1023,9 +1029,9 @@ Os itens **4, 5 e 6** são o que separa isto de "pedir referências pro ChatGPT"
 Se for usar isto em trabalho publicado: **guarde a transcrição inteira da sessão** como material suplementar. É o mais perto de reprodutibilidade que dá para chegar aqui — e ainda assim não é reprodutibilidade.
 :::
 
-# 5 · Fechamento {.bsl-secao background-color="#f3eee3"}
+# 5 · Fechamento {#5-fechamento .bsl-secao background-color="#f3eee3"}
 
-## Modelos abertos, rodando na sua máquina {.smaller}
+## Modelos abertos, rodando na sua máquina {#modelos-abertos-rodando-na-sua-maquina .smaller}
 
 Há hoje modelos de **pesos abertos** publicados por grupos chineses — **Qwen** (Alibaba), **DeepSeek**, **Kimi** (Moonshot AI) — que podem ser baixados e executados localmente (Ollama, LM Studio, llama.cpp).
 
@@ -1040,7 +1046,7 @@ Há hoje modelos de **pesos abertos** publicados por grupos chineses — **Qwen*
 **Não vou mostrar ranking de benchmark.** As posições mudam de mês e as avaliações públicas são contestadas e frequentemente autodeclaradas pelos fabricantes — vale aqui a mesma crítica que fizemos ao número do Undermind.
 :::
 
-## O pesquisador do futuro? {.smaller}
+## O pesquisador do futuro? {#o-pesquisador-do-futuro .smaller}
 
 Em maio de 2026 a *Nature* publicou o **Co-Scientist**, um sistema multiagente sobre o Gemini que gera, critica e refina hipóteses — validado em três aplicações biomédicas, com confirmação experimental *in vitro* em duas.
 
@@ -1056,7 +1062,7 @@ A pergunta interessante não é "a IA vai substituir o pesquisador". É: **se ge
 Gottweis J, Weng W-H, Natarajan V et al. (2026). *Accelerating scientific discovery with Co-Scientist*. Nature 655:487–496. [doi:10.1038/s41586-026-10644-y](https://doi.org/10.1038/s41586-026-10644-y) · Para o panorama mais amplo do efeito dos GPTs sobre o ecossistema acadêmico — recuperação de conhecimento, escrita por não nativos, triagem editorial — ver Cai Y, Deng Q, Lv T, Zhang W, Zhou Y (2025). *Impact of GPT on the Academic Ecosystem*. Science & Education. [doi:10.1007/s11191-024-00561-9](https://doi.org/10.1007/s11191-024-00561-9)
 :::
 
-## Custo e acesso: o Sul global paga duas vezes {.smaller}
+## Custo e acesso: o Sul global paga duas vezes {#custo-e-acesso-o-sul-global-paga-duas-vezes .smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -1079,7 +1085,7 @@ O resultado combinado é um **ciclo**: a literatura menos indexada é menos recu
 **O que está na nossa mão:** usar e sustentar infraestrutura aberta (OpenAlex, ASReview, openalexR), depositar nossos próprios trabalhos com DOI e metadados decentes, e **não** tratar "não apareceu na busca" como "não existe".
 :::
 
-## Como declarar uma busca assistida por IA {.smaller}
+## Como declarar uma busca assistida por IA {#como-declarar-uma-busca-assistida-por-ia .smaller}
 
 Fecha o circuito com a palestra anterior. No **AIdIT**, busca de literatura cai em *Conceitualização* (revisão de literatura) e *Redação* (identificar literatura a citar). Em termos práticos, o parágrafo precisa ter:
 
@@ -1097,7 +1103,7 @@ Fecha o circuito com a palestra anterior. No **AIdIT**, busca de literatura cai 
 Se a ferramenta foi usada só para achar sementes e a busca final foi booleana e reprodutível, **diga isso**. É uma descrição forte, não uma confissão.
 :::
 
-## Síntese: cinco regras {.smaller}
+## Síntese: cinco regras {#sintese-cinco-regras .smaller}
 
 1. **Nenhum LLM sem busca é ferramenta de revisão.** Sem recuperação ancorada, ele gera a *forma* de uma bibliografia.
 2. **Separe os dois mecanismos.** Bloqueio de acesso e alucinação têm causas diferentes; confundi-los gera solução errada.
@@ -1109,7 +1115,7 @@ Se a ferramenta foi usada só para achar sementes e a busca final foi booleana e
 O que a máquina faz bem é **ampliar o alcance**. O que ela não faz é **garantir a cobertura** — e cobertura é o que uma revisão promete ao leitor.
 :::
 
-## Obrigado {.center}
+## Obrigado {#obrigado .center}
 
 ::: {.columns}
 ::: {.column width="55%"}
@@ -1131,7 +1137,7 @@ Slides, código-fonte e todas as referências deste workshop estão no repositó
 :::
 :::
 
-## Para continuar {.smaller}
+## Para continuar {#para-continuar .smaller}
 
 ::: {.columns}
 ::: {.column width="50%"}
@@ -1155,7 +1161,7 @@ Slides, código-fonte e todas as referências deste workshop estão no repositó
 :::
 :::
 
-## Referências {.smaller}
+## Referências {#referencias .smaller}
 
 **Desempenho e confiabilidade das ferramentas**
 
@@ -1169,7 +1175,7 @@ Slides, código-fonte e todas as referências deste workshop estão no repositó
 - Zhao Z, Wang Y, Stuart T, De Vaan M, Ginsparg P, Yin Y (2026). *LLM hallucinations in the wild: Large-scale evidence from non-existent citations*. arXiv:2605.07723 — **preprint**
 - Lahlou S, Gouttebroze A, Oraee A, Madera J (2026). *Writing literature reviews with AI: principles, hurdles and some lessons learned*. arXiv:2603.20235 — **preprint**
 
-## Referências {.smaller}
+## Referências {#referencias-2 .smaller}
 
 **Métodos e ferramentas**
 
@@ -1196,7 +1202,7 @@ Slides, código-fonte e todas as referências deste workshop estão no repositó
 Estes slides: © Diogo B. Provete, sob [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.pt-br).
 :::
 
-## Declaração de uso de IA nesta apresentação {.smaller}
+## Declaração de uso de IA nesta apresentação {#declaracao-de-uso-de-ia-nesta-apresentacao .smaller}
 
 ::: {.bsl-destaque}
 Estes slides foram preparados com apoio de **Claude (Anthropic), setembro de 2026**, nas etapas de **conceitualização** (crítica e reestruturação do roteiro), **curadoria de dados** (busca e verificação das fontes, via Scholar Gateway, PubMed e busca na web) e **redação** (geração de texto a partir de prompts).
