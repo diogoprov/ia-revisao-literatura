@@ -13,45 +13,54 @@ Público-alvo: pós-graduação em ecologia e zoologia.
 | Bloco | Tema |
 |---|---|
 | 0 | De onde viemos: a palestra anterior parou em "declare" |
-| 1 | A web que os robôs leem — tráfego automatizado, renderização no cliente, bloqueio de crawlers, **alucinação ≠ bloqueio**, e a escala do problema medida na literatura publicada |
-| 2 | Bases legíveis por máquina: OpenAlex, Semantic Scholar, viés de corpus, API vs. MCP, `openalexR`, `litsearchr` |
-| 3 | **Mão na massa**: a mesma pergunta em Consensus e Undermind + OpenAlex em R; em que estágio o LLM é bom; sensibilidade vs. precisão; reprodutibilidade |
-| 4 | Demonstração: agente com MCP (ferramenta paga — só demo) |
-| 5 | Modelos abertos, Co-Scientist, custo/acesso Norte–Sul, e como declarar a busca |
+| 1 | **Ver acontecer → entender → medir → contextualizar.** Abre com a demonstração ao vivo de fabricação de referências; depois os dois mecanismos de erro, a escala do problema na literatura publicada, e só então como a web mudou (tráfego automatizado, renderização no cliente, bloqueio de *crawlers*) |
+| 2 | Bases legíveis por máquina: OpenAlex, Semantic Scholar, viés de corpus, **o lugar do Google Scholar**, API vs. MCP, `openalexR` e `litsearchr` |
+| 3 | **Mão na massa**: a mesma pergunta em Consensus e Undermind + OpenAlex (R ou web); em que estágio o LLM é bom; sensibilidade vs. precisão; reprodutibilidade |
+| 4 | Custo e acesso Norte–Sul, e então a demonstração com MCP (ferramenta paga — só demo) |
+| 5 | Modelos abertos, Co-Scientist, **a receita em uma página**, e como declarar a busca |
 
 Todas as citações literais foram extraídas dos documentos originais; todos os DOIs foram conferidos no CrossRef ou no PubMed. Dois preprints citados estão marcados como tal nos slides.
 
 ## O deck é um superconjunto — escolha a trilha
 
-São **67 slides**. Apresentar tudo leva ~2 h 20. A tabela abaixo é a **trilha de 2 h**; os slides listados como reserva ficam no arquivo para consulta posterior (o público os lê depois, na web) e para quando o workshop for dado em 3 h.
+São **70 slides**. Apresentar tudo leva ~2 h 10. A tabela abaixo é a **trilha de 2 h**; o resto fica no arquivo, que é onde o público relê depois.
 
 | Horário | Bloco | Min |
 |---|---|---|
 | 0:00 | Abertura, como funciona, bloco 0 | 8 |
-| 0:08 | **1 · A web que os robôs leem** (inclui a demo ao vivo de 8 min) | 30 |
-| 0:38 | **2 · Bases legíveis por máquina** | 15 |
-| 0:53 | *Intervalo / resolver instalação* | 7 |
-| 1:00 | **3 · Mão na massa** (20 min de exercício) | 40 |
-| 1:40 | **4 · Demonstração MCP** | 10 |
-| 1:50 | **5 · Fechamento** | 10 |
+| 0:08 | **1 · A web que os robôs leem** (8 min só de demonstração ao vivo) | 30 |
+| 0:38 | **2 · Bases legíveis por máquina** | 18 |
+| 0:56 | *Intervalo / resolver instalação* | 7 |
+| 1:03 | **3 · Mão na massa** (20 + 10 min de exercício) | 40 |
+| 1:43 | **4 · Custo, acesso e demonstração MCP** | 10 |
+| 1:53 | **5 · Fechamento e a receita** | 12 |
 
 **Reserva (cortar nesta ordem, se atrasar):**
 
-1. *"Teoria da internet morta"* — é digressão cultural, não sustenta nenhum argumento posterior
-2. *"Uma lição de medição, de graça"* (Ülkir & Paslı) — bom, mas redundante com o slide anterior
+1. *"Teoria da internet morta"* — digressão cultural, não sustenta argumento posterior
+2. *"Uma lição de medição, de graça"* (Ülkir & Paslı) — redundante com o slide anterior
 3. *"Quem é mais atingido"* — dobra parcialmente com *"E a alucinação não é uniforme no globo"*
-4. *"E a qualidade dos metadados"* (ORCID, resumos) — vira uma frase; o diagrama de Euler do slide anterior é que carrega o argumento
+4. *"E a qualidade dos metadados"* — vira uma frase; o diagrama de Euler carrega o argumento
 5. *"litsearchr"* — vira um link no slide final
 6. *"Como fica quando se faz direito"* + *"O detalhe que salta da figura"* — o par custa 4 min
-7. *"Modelos abertos, rodando na sua máquina"* — o assunto pede um workshop próprio
+7. *"Modelos abertos, rodando na sua máquina"* — o assunto pede workshop próprio
 
 **Não cortar, em nenhuma hipótese:**
 
-- *"O erro de raciocínio que eu quero evitar"* + *"Os dois mecanismos, lado a lado"* — é a correção conceitual que justifica o workshop
-- *"Demonstração ao vivo"* + *"O verificador"* — é o único momento em que eles **veem** acontecer
-- *"Em que estágio o LLM é bom — e em qual não é"* + *"O que essa figura resolve para você"* — reorganiza o fluxo de trabalho inteiro
-- *"A medida que resolve a discussão"* + *"Leia a tabela como estatístico"* + *"A mesma tabela, desenhada"* — é a evidência quantitativa que diz quando usar e quando não
-- *"Quanto cada base cobre, em escala"* — o diagrama de Euler é o argumento inteiro do bloco 2 numa figura
+- *"Demonstração ao vivo"* + *"O verificador"* — é o que abre o workshop e o único momento em que eles **veem** acontecer
+- *"Por que aquilo aconteceu"* + *"Os dois mecanismos, lado a lado"* — a correção conceitual que justifica o resto
+- *"Quanto cada base cobre, em escala"* — o bloco 2 inteiro numa figura
+- *"Mas e o Google Scholar?"* + *"A régua aplicada ao Google Scholar"* — é a ferramenta que todos usam; sem isso eles saem sem resposta
+- *"A medida que resolve a discussão"* + *"Leia a tabela como estatístico"* + *"A mesma tabela, desenhada"* — a evidência quantitativa que diz quando usar e quando não
+- *"A receita, em uma página"* — o slide que vai ser fotografado
+
+## Por que o bloco 1 está nessa ordem
+
+A ordem é deliberada: **experiência → mecanismo → magnitude → contexto**.
+
+A demonstração ao vivo abre o bloco porque prender a sala nos primeiros dez minutos vale mais que qualquer estatística. Só depois vêm os dois mecanismos (que explicam o que acabou de acontecer na tela), depois os números (que dizem o tamanho), e por último como a web mudou — que é a causa do mecanismo B e, sendo contexto, é a parte que se corta primeiro se o relógio apertar.
+
+A versão anterior deste deck fazia o contrário: trinta minutos sobre Cloudflare antes da primeira coisa acontecer.
 
 ## Preparação antes do workshop
 
@@ -63,11 +72,27 @@ São **67 slides**. Apresentar tudo leva ~2 h 20. A tabela abaixo é a **trilha 
 4. Testar a demo do bloco 4 (sessão ao vivo com MCP pode falhar).
 5. Preparar uma planilha compartilhada (ou o quadro) para os valores de Jaccard da turma.
 
-**Participantes** (e-mail com 3 dias de antecedência):
+**Participantes — e-mail com pelo menos uma semana de antecedência.** As contas precisam existir **antes**: criar 25 contas ao vivo trava o exercício, e o plano gratuito do Consensus e do Undermind tem limite de buscas que se gasta rápido se a pessoa ficar testando na hora.
 
-- conta gratuita em [Consensus](https://consensus.app) e [Undermind](https://undermind.ai);
-- R com `openalexR`, `litsearchr`, `httr2` e `tidyverse`;
-- **uma revisão publicada cuja lista de referências conheçam bem** — é o padrão-ouro do exercício.
+Texto sugerido para o e-mail:
+
+> Para o workshop do dia 19, chegue com três coisas prontas:
+>
+> 1. **Conta gratuita criada e testada** em consensus.app e undermind.ai — crie agora, faça **uma** busca de teste em cada e não gaste mais que isso; o plano gratuito é limitado e vamos precisar dele no dia.
+> 2. **R funcionando** com `openalexR`, `litsearchr`, `httr2` e `tidyverse`. Se não conseguir instalar, tudo bem — há uma alternativa pela web para o exercício.
+> 3. **Uma revisão publicada cuja lista de referências você conheça bem** — sua, do seu orientador ou do seu grupo. É o padrão-ouro contra o qual vamos medir o que as ferramentas acham.
+
+## Perguntas que vão aparecer — tenha resposta pronta
+
+A discussão é o objetivo, não o efeito colateral. Estas são as que têm maior chance de vir:
+
+- *"Meu orientador disse para não usar IA nenhuma. E agora?"*
+- *"Isso conta como má conduta? Preciso declarar na dissertação, ou só em artigo?"* — puxa para a palestra anterior e para a Portaria CNPq nº 2.664/2026
+- *"Qual dessas você usa?"* — desviar soa evasivo; responda com o seu fluxo real
+- *"Vale pagar? Qual, se eu só puder pagar uma?"*
+- *"E o Google Scholar?"* — agora tem dois slides; se não perguntarem, provoque
+- *"E se eu pedir para o ChatGPT com busca ativada? Resolve?"* — é o mecanismo B, não o A
+- *"Quanto tempo isso realmente economiza?"* — não há slide com esse número, e é honesto dizer que a evidência mede recall e precisão, não horas
 
 ## Estrutura do repositório
 
