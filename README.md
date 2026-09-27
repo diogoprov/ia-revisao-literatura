@@ -12,7 +12,7 @@ Público-alvo: pós-graduação em ecologia e zoologia.
 
 | Bloco | Tema |
 |---|---|
-| 0 | De onde viemos: a palestra anterior parou em "declare" |
+| 0 | De onde viemos: a palestra anterior parou em "declare"; e o editorial de Turchini (2026) fazendo a pergunta em voz alta — inclui **declaração de interesse** (o autor destes slides é editor na Wiley) |
 | 1 | **Ver acontecer → entender → medir → contextualizar.** Abre com a demonstração ao vivo de fabricação de referências; depois os dois mecanismos de erro, a escala do problema na literatura publicada, e só então como a web mudou (tráfego automatizado, renderização no cliente, bloqueio de *crawlers*) |
 | 2 | Bases legíveis por máquina: OpenAlex, Semantic Scholar, viés de corpus, **o lugar do Google Scholar**, API vs. MCP, `openalexR` e `litsearchr` |
 | 3 | **Mão na massa**: a mesma pergunta em Consensus e Undermind + OpenAlex (R ou web); em que estágio o LLM é bom; sensibilidade vs. precisão; reprodutibilidade |
@@ -23,17 +23,17 @@ Todas as citações literais foram extraídas dos documentos originais; todos os
 
 ## O deck é um superconjunto — escolha a trilha
 
-São **70 slides**. Apresentar tudo leva ~2 h 10. A tabela abaixo é a **trilha de 2 h**; o resto fica no arquivo, que é onde o público relê depois.
+São **73 slides**. Apresentar tudo leva ~2 h 15. A tabela abaixo é a **trilha de 2 h**; o resto fica no arquivo, que é onde o público relê depois.
 
 | Horário | Bloco | Min |
 |---|---|---|
-| 0:00 | Abertura, como funciona, bloco 0 | 8 |
-| 0:08 | **1 · A web que os robôs leem** (8 min só de demonstração ao vivo) | 30 |
-| 0:38 | **2 · Bases legíveis por máquina** | 18 |
-| 0:56 | *Intervalo / resolver instalação* | 7 |
-| 1:03 | **3 · Mão na massa** (20 + 10 min de exercício) | 40 |
-| 1:43 | **4 · Custo, acesso e demonstração MCP** | 10 |
-| 1:53 | **5 · Fechamento e a receita** | 12 |
+| 0:00 | Abertura, como funciona, bloco 0 (inclui os dois slides do editorial) | 11 |
+| 0:11 | **1 · A web que os robôs leem** (8 min só de demonstração ao vivo) | 30 |
+| 0:41 | **2 · Bases legíveis por máquina** | 18 |
+| 0:59 | *Intervalo / resolver instalação* | 6 |
+| 1:05 | **3 · Mão na massa** (20 + 10 min de exercício) | 40 |
+| 1:45 | **4 · Custo, acesso e demonstração MCP** | 12 |
+| 1:57 | **5 · Fechamento e a receita** | 12 |
 
 **Reserva (cortar nesta ordem, se atrasar):**
 
@@ -43,7 +43,8 @@ São **70 slides**. Apresentar tudo leva ~2 h 10. A tabela abaixo é a **trilha 
 4. *"E a qualidade dos metadados"* — vira uma frase; o diagrama de Euler carrega o argumento
 5. *"litsearchr"* — vira um link no slide final
 6. *"Como fica quando se faz direito"* + *"O detalhe que salta da figura"* — o par custa 4 min
-7. *"Modelos abertos, rodando na sua máquina"* — o assunto pede workshop próprio
+7. *"Por que esse editorial abre o workshop e não o encerra"* — o slide anterior já entrega a provocação; este é o aprofundamento
+8. *"Modelos abertos, rodando na sua máquina"* — o assunto pede workshop próprio
 
 **Não cortar, em nenhuma hipótese:**
 
@@ -53,6 +54,8 @@ São **70 slides**. Apresentar tudo leva ~2 h 10. A tabela abaixo é a **trilha 
 - *"Mas e o Google Scholar?"* + *"A régua aplicada ao Google Scholar"* — é a ferramenta que todos usam; sem isso eles saem sem resposta
 - *"A medida que resolve a discussão"* + *"Leia a tabela como estatístico"* + *"A mesma tabela, desenhada"* — a evidência quantitativa que diz quando usar e quando não
 - *"A receita, em uma página"* — o slide que vai ser fotografado
+- *"Um editor faz a pergunta em voz alta"* — é a moldura do workshop e carrega a declaração de interesse
+- *"O outro lado, que seria desonesto omitir"* (Amano et al.) — sem ele o bloco 4 vira militância de mão única
 
 ## Por que o bloco 1 está nessa ordem
 
@@ -69,6 +72,8 @@ A versão anterior deste deck fazia o contrário: trinta minutos sobre Cloudflar
 1. **Rodar o código do slide "O verificador"** no seu R. Ele usa `httr2`, `purrr` e `tibble` e não foi testado nesta máquina — teste antes, porque ele roda ao vivo na frente da turma.
 2. Rodar a **demonstração ao vivo** inteira uma vez, com um tema de teste, e anotar quanto tempo levou de verdade.
 3. Abrir `radar.cloudflare.com/bots/br` e conferir se o painel carrega.
+4. **Dizer em voz alta a declaração de interesse** no slide do editorial — ele é de um periódico Wiley, cita o Scholar Gateway (produto Wiley), e o apresentador é editor na Wiley. Está escrito no slide; diga também.
+5. Ter em mente a tensão deliberada: o editorial afirma que essas ferramentas *"are good now"*; Lau & Golder e Scherbakov medem o contrário para a etapa de busca. Isso **não** é contradição a esconder — é a discussão que o workshop existe para provocar.
 4. Testar a demo do bloco 4 (sessão ao vivo com MCP pode falhar).
 5. Preparar uma planilha compartilhada (ou o quadro) para os valores de Jaccard da turma.
 

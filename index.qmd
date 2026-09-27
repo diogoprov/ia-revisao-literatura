@@ -92,6 +92,42 @@ Se a busca em si passou a ser feita por uma máquina, **a busca virou parte do m
 Slides da palestra anterior: <https://provetelab.org/ia-escrita-cientifica/>
 :::
 
+## Um editor faz a pergunta em voz alta {#um-editor-faz-a-pergunta-em-voz-alta .smaller}
+
+Editorial de *Reviews in Aquaculture*, julho de 2026. O título já é a tese inteira:
+
+::: {.bsl-citacao}
+Can AI Write Your Next Review? Yes. Does That Make Real Review Articles Redundant? No
+:::
+
+E o autor não desvia da versão incômoda da pergunta — citando pelo nome uma das ferramentas que vamos usar hoje:
+
+> "Tools such as **Scholar Gateway**, Wiley's own AI search platform, can already scan the full corpus of published Wiley articles and return a fast, credible, well-referenced summary of a topic. **These tools are good now**, and they are improving quickly. If a machine can produce a competent synthesis of the literature in seconds, why do we still need review articles written by people?"
+
+::: {.bsl-destaque}
+A resposta dele separa duas coisas que costumamos confundir: *"Synthesising literature is **not the same** as understanding it from the inside."*
+:::
+
+**Declaração de interesse:** sou editor na Wiley, que publica esse periódico e mantém o Scholar Gateway citado acima.
+
+::: {.fonte}
+Turchini GM (2026). Reviews in Aquaculture 18:e70196. [doi:10.1111/raq.70196](https://doi.org/10.1111/raq.70196) — acesso aberto.
+:::
+
+## Por que esse editorial abre o workshop e não o encerra {#por-que-esse-editorial-abre-o-workshop .smaller}
+
+Ele responde *"por que ainda precisamos de revisões escritas por gente?"* assim: quem fez a pesquisa primária sabe onde estão as fraquezas metodológicas do campo, sabe **o que os dados não dizem**, e sabe onde a incerteza é real. Nada disso está no texto publicado — portanto nada disso é recuperável por busca.
+
+::: {.bsl-destaque}
+*"A well-referenced summary of the literature, however fluently written, is not a review article just because it is structured like one."*
+:::
+
+::: {.bsl-alerta}
+**Mas guardem uma frase dele para o bloco 3.** Quando o editorial afirma que essas ferramentas *"are good now"*, isso é **juízo de editor, não medição** — e vai bater de frente com a evidência quantitativa que veremos. Ter as duas coisas na mesa é o ponto: a percepção de quem edita e o número de quem mediu não estão no mesmo lugar.
+:::
+
+E há uma diferença de escopo: o editorial trata de **escrever** revisões, que era a palestra anterior. Hoje o assunto é a etapa antes dela — **achar** o que vai ser revisado.
+
 ## Três teses que este workshop defende {#tres-teses-que-este-workshop-defende .smaller}
 
 1. **A web deixou de ser legível por programas** — e isso tem consequências técnicas concretas para qualquer ferramenta que prometa "ler a literatura".
@@ -1118,8 +1154,20 @@ Lembre do bloco 1: a alucinação **passou de 80%** para publicações de paíse
 O resultado combinado é um **ciclo**: a literatura menos indexada é menos recuperada, logo menos citada, logo menos indexada. A ferramenta não criou o viés — mas automatiza e acelera ele.
 :::
 
+## O outro lado, que seria desonesto omitir {#o-outro-lado-que-seria-desonesto-omitir .smaller}
+
+::: {.bsl-exercicio}
+Amano et al. pesquisaram **908 pesquisadores de oito nacionalidades**: quem não é falante nativo de inglês gasta muito mais tempo lendo, escrevendo e preparando apresentações, e tem mais artigos rejeitados ou devolvidos **por causa da escrita**, independentemente da qualidade da ciência. Turchini (2026) tira daí a conclusão que nos interessa: *"AI, in reducing the language barrier, may end up accelerating scientific progress itself, not just individual careers."*
+
+Ou seja: a mesma tecnologia que **amplifica** o viés de recuperação **reduz** a barreira de língua. As duas coisas são verdadeiras ao mesmo tempo, e quem apresenta só uma delas está fazendo propaganda.
+:::
+
 ::: {.bsl-alerta}
 **O que está na nossa mão:** usar e sustentar infraestrutura aberta (OpenAlex, ASReview, openalexR), depositar nossos próprios trabalhos com DOI e metadados decentes, e **não** tratar "não apareceu na busca" como "não existe".
+:::
+
+::: {.fonte}
+Amano T, Ramírez-Castañeda V, Berdejo-Espinola V et al. (2023). *The manifold costs of being a non-native English speaker in science*. PLoS Biology 21(7):e3002184. [doi:10.1371/journal.pbio.3002184](https://doi.org/10.1371/journal.pbio.3002184) · citado em Turchini (2026), doi:10.1111/raq.70196
 :::
 
 ## O que você vai ver (e o que não vai poder repetir hoje) {#o-que-voce-vai-ver-e-o-que-nao-vai-poder .smaller}
@@ -1268,6 +1316,12 @@ Zotero: <https://www.zotero.org> · há assistentes de IA que trabalham **dentro
 O que a máquina faz bem é **ampliar o alcance**. O que ela não faz é **garantir a cobertura** — e cobertura é o que uma revisão promete ao leitor.
 :::
 
+Voltando ao editorial do começo, que fecha melhor do que eu conseguiria:
+
+::: {.bsl-citacao}
+Reviews are not made redundant by AI. They are redefined by it.
+:::
+
 ## Obrigado {#obrigado .center}
 
 ::: {.columns}
@@ -1339,6 +1393,11 @@ Slides, código-fonte e todas as referências deste workshop estão no repositó
 - Grainger M, Singsaas FT. *Guide to Using AI in Literature Searching and Screening for Evidence Syntheses*, v0.2. NINA. <https://ninanor.github.io/AI_review_guide/>
 - Gusenbauer M, Haddaway NR (2020). *Which academic search systems are suitable for systematic reviews or meta-analyses? Evaluating retrieval qualities of Google Scholar, PubMed, and 26 other resources*. Research Synthesis Methods 11(2):181–217. doi:10.1002/jrsm.1378
 - Gusenbauer M (2024). *Beyond Google Scholar, Scopus, and Web of Science: an evaluation of the backward and forward citation coverage of 59 databases' citation indices*. Research Synthesis Methods 15(5):802–817. doi:10.1002/jrsm.1729
+
+**Editorial e equidade**
+
+- Turchini GM (2026). *Can AI Write Your Next Review? Yes. Does That Make Real Review Articles Redundant? No*. Reviews in Aquaculture 18:e70196. doi:10.1111/raq.70196
+- Amano T, Ramírez-Castañeda V, Berdejo-Espinola V et al. (2023). *The manifold costs of being a non-native English speaker in science*. PLoS Biology 21(7):e3002184. doi:10.1371/journal.pbio.3002184
 
 **Contexto e perspectivas**
 
