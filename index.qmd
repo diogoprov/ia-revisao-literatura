@@ -108,7 +108,7 @@ E o autor não desvia da versão incômoda da pergunta — citando pelo nome uma
 A resposta dele separa duas coisas que costumamos confundir: *"Synthesising literature is **not the same** as understanding it from the inside."*
 :::
 
-**Declaração de interesse:** sou editor na Wiley, que publica esse periódico e mantém o Scholar Gateway citado acima.
+**Declaração de conflito de interesse:** sou editor na Wiley, que publica esse periódico e mantém o Scholar Gateway citado acima.
 
 ::: {.fonte}
 Turchini GM (2026). Reviews in Aquaculture 18:e70196. [doi:10.1111/raq.70196](https://doi.org/10.1111/raq.70196) — acesso aberto.
@@ -212,7 +212,9 @@ Um **DOI é uma string arbitrária de alta entropia**: não há regularidade lin
 ::: {.column width="50%"}
 **Mecanismo B — ancoragem ruim**
 
-Ferramentas com busca (RAG) recuperam documentos e geram a partir deles. Se a recuperação traz pouco, ou traz a casca vazia do slide anterior, o modelo **preenche a lacuna com plausibilidade**.
+**RAG** — *retrieval-augmented generation*, geração aumentada por recuperação. O modelo primeiro **busca** documentos, depois **gera** a resposta a partir do que recuperou. É o que Consensus, Undermind e o ChatGPT com busca fazem.
+
+Se a recuperação traz pouco, ou traz a casca vazia que vamos ver adiante, o modelo **preenche a lacuna com plausibilidade**.
 
 Aqui o bloqueio *agrava* — mas o erro continua sendo de geração, não de acesso.
 :::
