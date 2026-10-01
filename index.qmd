@@ -645,7 +645,7 @@ Para reprodutibilidade, essa é a propriedade que importa.
 ```
 
 ::: {.bsl-destaque}
-**Quatro em cada cinco registros do OpenAlex naquele período não estão nas outras duas bases.** Buscar só na WoS ou na Scopus é trabalhar numa fatia — e é essa fatia que define o que existe, para quem busca por ali.
+**Quatro em cada cinco registros do OpenAlex naquele período não estão nas outras duas bases.** Buscar só na WoS ou na Scopus é trabalhar numa fatia — e é essa fatia que define o que existe, para quem busca por ali. Messeri & Crockett chamam isso de **ilusão de amplitude exploratória**: você acredita varrer o campo, quando varre o que a sua base indexa.
 :::
 
 ::: {.bsl-alerta}
@@ -653,7 +653,7 @@ Para reprodutibilidade, essa é a propriedade que importa.
 :::
 
 ::: {.fonte}
-Culbert JH, Hobert A, Jahn N, Haupka N, Schmidt M, Donner P, Mayr P (2025). *Reference coverage analysis of OpenAlex compared to Web of Science and Scopus*. Scientometrics. [doi:10.1007/s11192-025-05293-3](https://doi.org/10.1007/s11192-025-05293-3) · números do preprint arXiv:2401.16359
+Culbert JH, Hobert A, Jahn N, Haupka N, Schmidt M, Donner P, Mayr P (2025). *Reference coverage analysis of OpenAlex compared to Web of Science and Scopus*. Scientometrics. [doi:10.1007/s11192-025-05293-3](https://doi.org/10.1007/s11192-025-05293-3) · números do preprint arXiv:2401.16359 · Messeri & Crockett (2024), Nature 627:49–58
 :::
 
 ## E a qualidade dos metadados {#e-a-qualidade-dos-metadados .smaller}
@@ -1404,6 +1404,7 @@ Slides, código-fonte e todas as referências deste workshop estão no repositó
 **Contexto e perspectivas**
 
 - Gottweis J, Weng W-H, Natarajan V et al. (2026). *Accelerating scientific discovery with Co-Scientist*. Nature 655:487–496. doi:10.1038/s41586-026-10644-y
+- Messeri L, Crockett MJ (2024). *Artificial intelligence and illusions of understanding in scientific research*. Nature 627:49–58. doi:10.1038/s41586-024-07146-0
 - Cai Y, Deng Q, Lv T, Zhang W, Zhou Y (2025). *Impact of GPT on the Academic Ecosystem*. Science & Education. doi:10.1007/s11191-024-00561-9
 - Naddaf M, Quill E (01/04/2026). *Hallucinated citations are polluting the scientific literature. What can be done?* Nature. <https://www.nature.com/articles/d41586-026-00969-z>
 - Stokel-Walker C (14/05/2026). *Hallucinated citations highest in social sciences preprints site*. Nature. <https://www.nature.com/articles/d41586-026-01545-1>
